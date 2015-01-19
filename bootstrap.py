@@ -16,6 +16,9 @@ symlinks = [
     ('vim', '.vim'),
     ('vimrc', '.vimrc'),
 
+    # LightTable
+    #('LightTable/User', '.config/LightTable/User'),
+
     # emacs
 #    ('.emacs', '.emacs'),
 #    ('emacs.d/init.el', '.emacs.d/init.el'),
