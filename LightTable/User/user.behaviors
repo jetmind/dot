@@ -1,8 +1,7 @@
-;; Your file has been converted to the new flat format.
-;; Conversion does not preserve comments or indentation.
-;; File is backed up at /home/jetmind/.config/LightTable/User/user.behaviors.bak
 [
- [:app :lt.objs.style/set-skin "dark"]
+ [:app :lt.objs.style/provide-skin "tonsky" "/home/jetmind/Dropbox/lighttable/tonsky-light-skin.css"]
+ [:app :lt.objs.style/provide-theme "tonsky" "/home/jetmind/Dropbox/lighttable/tonsky-light.css"]
+ [:app :lt.objs.style/set-skin "new-dark"]
 
  [:editor :lt.objs.editor/no-wrap]
  [:editor :lt.objs.style/set-theme "default"]
