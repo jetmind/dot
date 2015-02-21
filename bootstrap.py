@@ -31,6 +31,9 @@ symlinks = [
     ('zsh/zshrc', '.zshrc'),
     ('zsh/jetprose.zsh-theme', '.oh-my-zsh/themes/jetprose.zsh-theme'),
 
+    # ack
+    ('ackrc', '.ackrc'),
+
     # virtualenv
     # FIXME: 'ln -s' by hand for now
     # ('virtualenv/postactivate', '.virtualenvs/postactivate'),

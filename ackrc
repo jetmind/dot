@@ -1,0 +1,4 @@
+--sort-files
+--ignore-file=ext:pyc
+--ignore-file=is:tags
+--ignore-directory=is:Allura.egg-info
