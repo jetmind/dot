@@ -31,6 +31,9 @@ Plugin 'tpope/vim-fireplace'
 " rust
 Plugin 'wting/rust.vim'
 
+" js
+Plugin 'Shutnik/jshint2.vim'
+
 " themes
 Plugin 'altercation/vim-colors-solarized'
 
