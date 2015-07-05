@@ -58,6 +58,7 @@ set linebreak		" перенос строк по словам, а не по бу�
 set wildmenu
 set backspace=indent,eol,start
 set wildignore=*.pyc,*.pyo,.git,*.class,*~,#*#,*.egg-info
+set wildignore+=*/env-docker/*
 set gdefault  " default /g in regexps
 set hidden
 " set relativenumber
@@ -165,6 +166,7 @@ if has("autocmd")
   au BufRead,BufNewFile *.html set ft=htmldjango
   au BufRead,BufNewFile *.md set ft=markdown
   au BufRead,BufNewFile *.cljs set filetype=clojure
+  au BufRead,BufNewFile *.boot set filetype=clojure
   " remove all trailing whitespace on file save
   " autocmd BufWritePre *.py,*.html,*.less,*.js,*.sml,*.clj :%s/\s\+$//e
   " autoreload vim configuration on save
