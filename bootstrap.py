@@ -72,10 +72,16 @@ def install_zsh():
     run(['git', 'clone', oh_zsh_url, join(home, '.oh-my-zsh')])
 
 
+def init_vim():
+    run(['git', 'clone', 'https://github.com/gmarik/Vundle.vim.git', join(home, '.vim/bundle/Vundle.vim')])
+    run(['vim', '+PluginInstall', '+qall'])
+    run(['vim', '+PluginInstall', '+qall'])
+
+
 # run this before making symlinks
 before = [install_zsh]
 # run this after making symlinks
-after = []
+after = [init_vim]
 
 
 def bootstrap():
