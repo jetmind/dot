@@ -34,10 +34,6 @@ symlinks = [
     # ack
     ('ackrc', '.ackrc'),
 
-    # virtualenv
-    # FIXME: 'ln -s' by hand for now
-    # ('virtualenv/postactivate', '.virtualenvs/postactivate'),
-
     # awesome wm
 #    ('awesome', '.config/awesome'),
 #    ('gtkrc-2.0', '.gtkrc-2.0'),
@@ -53,6 +49,12 @@ symlinks = [
     # mc
 #    ('mc/ini', '.config/mc/ini'),
 #    ('mc/mc.ext', '.config/mc/mc.ext'),
+
+
+    # virtualenv
+    # FIXME: ln -s manually after this script
+    # ('virtualenv/postactivate', '.virtualenvs/postactivate'),
+
 ]
 symlinks = [
     (normpath(join(dot_base, tp)), normpath(join(home, sp)))
@@ -70,16 +72,9 @@ def install_zsh():
     run(['git', 'clone', oh_zsh_url, join(home, '.oh-my-zsh')])
 
 
-def bootstrap_vim():
-    run(['git', 'submodule', 'init'])
-    run(['git', 'submodule', 'update'])
-    # TODO: install Command-T
-
-
 # run this before making symlinks
 before = [install_zsh]
 # run this after making symlinks
-# after = [bootstrap_vim]
 after = []
 
 
