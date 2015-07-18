@@ -18,8 +18,8 @@ export PATH=/home/jetmind/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:
 export EDITOR=vim
 
 export GOPATH=$HOME/p/go
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/usr/local/go/bin
+export PATH=/usr/local/go/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 #export PATH=$PATH:$HOME/gears/sbt/bin
 
