@@ -34,6 +34,9 @@ Plugin 'wting/rust.vim'
 " js
 Plugin 'Shutnik/jshint2.vim'
 
+" Go
+Plugin 'fatih/vim-go'
+
 " themes
 Plugin 'altercation/vim-colors-solarized'
 
