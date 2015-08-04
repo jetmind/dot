@@ -62,6 +62,7 @@ set wildmenu
 set backspace=indent,eol,start
 set wildignore=*.pyc,*.pyo,.git,*.class,*~,#*#,*.egg-info
 set wildignore+=*/env-docker/*
+set wildignore+=*/target/*
 set gdefault  " default /g in regexps
 set hidden
 " set relativenumber
