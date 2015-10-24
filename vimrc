@@ -214,7 +214,8 @@ if has('gui_running')
   syntax on
   " colorscheme molokai
   " colorscheme codeschool
-  colorscheme min
+  " colorscheme min
+  colorscheme jet
   set columns=95
   set lines=25
 
