@@ -126,8 +126,8 @@ hi StatusLine      guifg=#262626 guibg=fg
 hi StatusLineNC    guifg=#262626 guibg=#080808
 hi StorageClass    guifg=fg
 hi Structure       guifg=fg
-hi Tag             guifg=#F92672
-hi Title           guifg=#ef5939
+hi Tag             guifg=fg
+hi Title           guifg=fg
 hi Todo            guifg=#FFFFFF guibg=bg      gui=bold
 
 hi Typedef         guifg=fg
