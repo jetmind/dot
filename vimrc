@@ -64,6 +64,7 @@ set wildignore=*.pyc,*.pyo,.git,*.class,*~,#*#,*.egg-info
 set wildignore+=*/env-docker/*
 set wildignore+=*/target/*
 set wildignore+=*/node_modules/*
+set wildignore+=*/resources/public/js/*
 set gdefault  " default /g in regexps
 set hidden
 " set relativenumber
@@ -195,6 +196,9 @@ let g:paredit_smartjump = 1
 let g:paredit_mode = 1
 
 let g:yankring_replace_n_pkey = '<C-\>'
+
+let g:clojure_align_subforms = 1
+let g:clojure_align_multiline_strings = 1
 
 
 "set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
