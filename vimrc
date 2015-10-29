@@ -16,6 +16,7 @@ Plugin 'vim-scripts/YankRing.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+Plugin 'bling/vim-airline'
 
 " python
 Plugin 'nvie/vim-flake8'
