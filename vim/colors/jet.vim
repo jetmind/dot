@@ -54,12 +54,22 @@ hi SpecialKey      guifg=fg
 " }}}
 " Diffs {{{
 
-hi DiffAdd                       guibg=#1e4313
+hi DiffAdd         guifg=#A6E22E guibg=#1e4313
 hi DiffChange      guifg=#89807D guibg=#322F2D
 hi DiffDelete      guifg=#ff0088 guibg=#1B1E1F
-hi DiffText                      guibg=#4A4340 gui=italic,bold
+hi DiffText        guifg=#A6E22E guibg=#4A4340
 
 " }}}
+" Git commit {{{
+hi gitcommitSelectedType    guifg=#A6E22E
+hi gitcommitSelectedFile    guifg=#A6E22E
+
+hi gitcommitDiscardedType   guifg=#F92672
+hi gitcommitDiscardedFile   guifg=#F92672
+
+hi gitcommitUntrackedFile   guifg=#8F8F8F
+" }}}
+
 " Cursor {{{
 
 hi Cursor          guifg=#000000 guibg=#F35FBC
