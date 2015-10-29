@@ -18,6 +18,8 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'bling/vim-airline'
 
+Plugin 'gerw/vim-HiLinkTrace'  " trace syntax highlighting
+
 " python
 Plugin 'nvie/vim-flake8'
 
