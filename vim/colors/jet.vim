@@ -68,6 +68,8 @@ hi gitcommitDiscardedType   guifg=#F92672
 hi gitcommitDiscardedFile   guifg=#F92672
 
 hi gitcommitUntrackedFile   guifg=#8F8F8F
+
+hi gitcommitSummary         guifg=#F8F8F2
 " }}}
 
 " Cursor {{{
