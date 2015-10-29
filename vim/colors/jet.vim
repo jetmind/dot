@@ -64,8 +64,8 @@ hi DiffText        guifg=#A6E22E guibg=#4A4340
 hi gitcommitSelectedType    guifg=#A6E22E
 hi gitcommitSelectedFile    guifg=#A6E22E
 
-hi gitcommitDiscardedType   guifg=#F92672
-hi gitcommitDiscardedFile   guifg=#F92672
+hi gitcommitDiscardedType   guifg=#ff0088
+hi gitcommitDiscardedFile   guifg=#ff0088
 
 hi gitcommitUntrackedFile   guifg=#8F8F8F
 
