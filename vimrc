@@ -101,6 +101,8 @@ nmap <silent> <leader>0 :only<CR>
 
 " copy current filename to clipboard
 nmap <silent> <leader>f :let @+ = expand("%")<CR>
+" copy current filename:line to clipboard
+nmap <silent> <leader>fn :let @+ = expand("%") . ":" . line(".")<CR>
 " paste from clipboard
 nmap <silent> <leader>p "+p
 nmap <silent> <leader>P "+P
