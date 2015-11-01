@@ -51,6 +51,8 @@ hi Label           guifg=fg
 hi Macro           guifg=fg
 hi SpecialKey      guifg=fg
 
+hi clojureRegexp   guifg=#BCDBFF
+
 " }}}
 " Diffs {{{
 
