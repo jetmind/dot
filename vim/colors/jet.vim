@@ -52,6 +52,9 @@ hi Macro           guifg=fg
 hi SpecialKey      guifg=fg
 
 hi clojureRegexp   guifg=#BCDBFF
+hi jClass          guifg=#BCDBFF
+hi jForms          guifg=#BCDBFF
+hi jId             guifg=#BCDBFF
 
 " }}}
 " Diffs {{{
