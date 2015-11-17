@@ -72,6 +72,8 @@ set gdefault  " default /g in regexps
 set hidden
 " set relativenumber
 set undofile
+" vertical diff by default
+set diffopt+=vertical
 
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz,№#
 
