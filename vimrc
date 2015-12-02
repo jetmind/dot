@@ -77,6 +77,9 @@ set diffopt+=vertical
 
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz,№#
 
+" Om components indentation
+set lispwords+=query,ident,render
+set lispwords+=div,span,article,aside
 
 " LEADER MAPPINGS
 
