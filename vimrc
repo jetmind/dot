@@ -79,7 +79,8 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNO
 
 " LEADER MAPPINGS
 
-let mapleader = ","
+" let mapleader = ","
+let mapleader = "\<space>"
 let g:pep8_map = '<leader>8'
 let g:ctrlp_match_window_reversed = 0
 map <silent> <leader>td <Plug>TaskList
@@ -105,7 +106,6 @@ nmap <silent> <leader>f :let @+ = expand("%")<CR>
 " copy current filename:line to clipboard
 nmap <silent> <leader>fn :let @+ = expand("%") . ":" . line(".")<CR>
 " paste from clipboard
-nmap <silent> <leader>p "+p
 nmap <silent> <leader>P "+P
 vmap <silent> <leader>p "+p
 " yank to clipboard
@@ -115,7 +115,7 @@ nmap <silent> <leader>y "+y
 " remove trailing spaces
 nmap <leader>ts :%s/\s\+$//e<CR>:noh<CR>
 
-nmap <Space> <C-D>
+" nmap <Space> <C-D>
 
 
 " BUFFERS
@@ -244,7 +244,7 @@ if has('gui_running')
   set guioptions-=l
   set guioptions-=r
   set guioptions-=b
-  
+
   " turn off cursor blinking
   set guicursor+=a:blinkon0
 
