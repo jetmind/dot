@@ -79,8 +79,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNO
 
 " LEADER MAPPINGS
 
-" let mapleader = ","
-let mapleader = "\<space>"
+let mapleader = ","
 let g:pep8_map = '<leader>8'
 let g:ctrlp_match_window_reversed = 0
 map <silent> <leader>td <Plug>TaskList
