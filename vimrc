@@ -68,6 +68,7 @@ set wildignore+=*/env-docker/*
 set wildignore+=*/target/*
 set wildignore+=*/node_modules/*
 set wildignore+=*/resources/public/js/*
+set wildignore+=*/resources/public/dev-js/*
 set gdefault  " default /g in regexps
 set hidden
 " set relativenumber
