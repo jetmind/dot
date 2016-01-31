@@ -2,9 +2,6 @@
   name = Igor Bondarenko
   email = jetmind2@gmail.com
 
-[http]
-
-# make everything have colors, e.g. red & green for diff output
 [color]
   ui = true
 
@@ -21,7 +18,6 @@
   l1 = log --pretty=oneline --graph --abbrev-commit
   pushm = push origin master
 
-# only push your current branch
 [push]
   default = current
 
@@ -31,8 +27,14 @@
   # don't show a/ and b/ prefixes in front of file paths
   noprefix = true
 
-# when checking out a new branch, always track it so you can pull again later
 [branch]
   autosetupmerge = true
 [core]
 	excludesfile = /home/jetmind/.gitignore_global
+
+[transfer]
+  fsckobjects = true
+[fetch]
+  fsckobjects = true
+[receive]
+  fsckObjects = true
