@@ -1,5 +1,8 @@
 {:user
- {:dependencies [[pjstadig/humane-test-output "0.7.1"]]
+ {:dependencies [
+    [pjstadig/humane-test-output "0.7.1"]
+    [org.clojure/tools.namespace "0.2.11"]
+  ]
   :injections [(require 'pjstadig.humane-test-output)
                (pjstadig.humane-test-output/activate!)]
   :plugins [[lein-difftest "2.0.0"]
