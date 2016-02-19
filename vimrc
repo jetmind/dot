@@ -46,7 +46,7 @@ Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 filetype plugin indent on
 
-colorscheme ir_black
+colorscheme Monokai-Refined
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -55,7 +55,7 @@ set nocompatible
 set autoindent
 set smartindent		" умный автоотступ
 set ignorecase		" игнорировать регистр при поиске
-syntax off
+syntax on
 " set number
 set incsearch		" прокручивать к найденому в процесе набора поискового запроса
 set hlsearch		" подсветка искомого выражения
@@ -195,7 +195,7 @@ if has("autocmd")
   " Om components lifecycle methods indentation
   autocmd FileType clojure setlocal lispwords+=query,ident,render,params
   " compojure verbs
-  autocmd FileType clojure setlocal lispwords+=GET,POST,PUT,DELETE,OPTIONS
+  autocmd FileType clojure setlocal lispwords+=GET,POST,PUT,DELETE,OPTIONS,ANY,context
 endif
 
 
@@ -211,7 +211,7 @@ let g:paredit_mode = 1
 
 let g:yankring_replace_n_pkey = '<C-\>'
 
-let g:clojure_align_subforms = 1
+" let g:clojure_align_subforms = 1
 let g:clojure_align_multiline_strings = 1
 
 "set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
