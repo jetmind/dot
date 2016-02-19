@@ -14,7 +14,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/ga
 export PATH=$PATH:/home/jetmind/.local/bin
 export PATH=$PATH:/home/jetmind/bin
 
-export EDITOR=vim
+export EDITOR=nvim
 
 export GOPATH=$HOME/p/go
 export PATH=/usr/local/go/bin:$PATH
