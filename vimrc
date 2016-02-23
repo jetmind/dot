@@ -46,6 +46,11 @@ Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 filetype plugin indent on
 
+set backup
+set swapfile
+set backupdir=~/.vim-tmp
+set directory=~/.vim-tmp
+
 colorscheme Monokai-Refined
 set tabstop=2
 set softtabstop=2
