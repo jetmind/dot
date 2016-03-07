@@ -23,6 +23,9 @@ symlinks = [
 #    ('.emacs', '.emacs'),
 #    ('emacs.d/init.el', '.emacs.d/init.el'),
 
+    # spacemacs
+    ('.spacemacs', 'spacemacs'),
+
     # Sublime Text 3
 #    ('sublime-text-3/Preferences.sublime-settings',
 #     '.config/sublime-text-3/Packages/User/Preferences.sublime-settings'),
