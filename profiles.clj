@@ -7,4 +7,6 @@
                (pjstadig.humane-test-output/activate!)]
   :plugins [[lein-difftest "2.0.0"]
             [lein-cljfmt "0.3.0"]]
-  :signing {:gpg-key "CE27F99B"}}}
+  :signing {:gpg-key "CE27F99B"}}
+ :repl {:plugins [[cider/cider-nrepl "0.11.0"]]}
+}
