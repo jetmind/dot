@@ -28,11 +28,12 @@
    ;; Press <SPC> T n to cycle to the next theme in the list
    dotspacemacs-themes '(spacemacs-light
                          spacemacs-dark
-                         solarized-dark
-                         solarized-light
-                         leuven
-                         monokai
-                         zenburn)
+                         ;; solarized-dark
+                         ;; solarized-light
+                         ;; leuven
+                         ;; monokai
+                         ;; zenburn
+                         )
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -76,9 +77,6 @@
 
 (defun dotspacemacs/user-config ()
   (setq-default line-spacing 5)
-)
-
-(defun dotspacemacs/config ()
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
 )
