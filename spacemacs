@@ -12,6 +12,7 @@
      emacs-lisp
      git
      clojure
+     python
      )
    dotspacemacs-additional-packages '(
      evil-smartparens
