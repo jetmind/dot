@@ -80,6 +80,9 @@
   (setq-default line-spacing 5)
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
+
+  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
