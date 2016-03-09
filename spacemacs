@@ -10,7 +10,8 @@
      ;; List: https://github.com/syl20bnr/spacemacs/tree/master/layers
      auto-completion
      emacs-lisp
-     git
+     (git :variables
+          git-magit-status-fullscreen t)
      clojure
      python
      )
