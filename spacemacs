@@ -28,11 +28,11 @@
    dotspacemacs-startup-banner 'official
    dotspacemacs-startup-lists '(recents projects)
    ;; Press <SPC> T n to cycle to the next theme in the list
-   dotspacemacs-themes '(spacemacs-light
+   dotspacemacs-themes '(leuven
+                         spacemacs-light
                          spacemacs-dark
                          ;; solarized-dark
                          ;; solarized-light
-                         ;; leuven
                          ;; monokai
                          ;; zenburn
                          )
