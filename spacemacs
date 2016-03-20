@@ -14,7 +14,9 @@
           git-magit-status-fullscreen t)
      clojure
      python
-     )
+     html
+     markdown
+   )
    dotspacemacs-additional-packages '(
      evil-smartparens
    )
