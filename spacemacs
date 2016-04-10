@@ -14,8 +14,10 @@
           git-magit-status-fullscreen t)
      clojure
      python
+     ocaml
      html
      markdown
+     yaml
    )
    dotspacemacs-additional-packages '(
      evil-smartparens
@@ -30,7 +32,8 @@
    dotspacemacs-startup-banner 'official
    dotspacemacs-startup-lists '(recents projects)
    ;; Press <SPC> T n to cycle to the next theme in the list
-   dotspacemacs-themes '(leuven
+   dotspacemacs-themes '(minimal-light
+                         leuven
                          spacemacs-light
                          spacemacs-dark
                          ;; solarized-dark
@@ -80,12 +83,20 @@
 (defun dotspacemacs/user-init ())
 
 (defun dotspacemacs/user-config ()
+  (global-hl-line-mode -1)
   (setq-default line-spacing 5)
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
 
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
+  (setq-default
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
