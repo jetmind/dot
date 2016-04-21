@@ -82,6 +82,10 @@
 
 (defun dotspacemacs/user-init ())
 
+(defun register-cider-refresh-hooks ()
+  (setq cider-refresh-before-fn "user/stop"
+        cider-refresh-after-fn  "user/start"))
+
 (defun dotspacemacs/user-config ()
   (global-hl-line-mode -1)
   (setq-default line-spacing 5)
@@ -97,6 +101,8 @@
    web-mode-css-indent-offset 2
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
+
+  (register-cider-refresh-hooks)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
