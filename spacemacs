@@ -82,6 +82,14 @@
 
 (defun dotspacemacs/user-init ())
 
+(defun setup-web-mode ()
+  (setq-default
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2))
+
 (defun register-cider-refresh-hooks ()
   (setq cider-refresh-before-fn "user/stop"
         cider-refresh-after-fn  "user/start"))
@@ -95,13 +103,7 @@
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
-  (setq-default
-   css-indent-offset 2
-   web-mode-markup-indent-offset 2
-   web-mode-css-indent-offset 2
-   web-mode-code-indent-offset 2
-   web-mode-attr-indent-offset 2)
-
+  (setup-web-mode)
   (register-cider-refresh-hooks)
 )
 
