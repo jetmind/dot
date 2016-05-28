@@ -35,7 +35,7 @@ symlinks = [
     ('zsh/jetprose.zsh-theme', '.oh-my-zsh/themes/jetprose.zsh-theme'),
 
     # ack
-    ('ackrc', '.ackrc'),
+#    ('ackrc', '.ackrc'),
 
     # awesome wm
 #    ('awesome', '.config/awesome'),
