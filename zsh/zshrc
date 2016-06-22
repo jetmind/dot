@@ -23,8 +23,8 @@ export PATH=$GOPATH/bin:$PATH
 export ANDROID_HOME=~/Android/Sdk
 
 # aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias o="xdg-open"
 
 alias git="nocorrect git"
