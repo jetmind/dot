@@ -20,6 +20,8 @@ export GOPATH=$HOME/p/go
 export PATH=/usr/local/go/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 
+export ANDROID_HOME=~/Android/Sdk
+
 # aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
