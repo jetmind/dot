@@ -21,6 +21,8 @@ export PATH=/usr/local/go/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 
 export ANDROID_HOME=~/Android/Sdk
+PATH="~/Android/Sdk/tools:~/Android/Sdk/platform-tools:${PATH}"
+export PATH
 
 # aliases
 alias zshconfig="nvim ~/.zshrc"
