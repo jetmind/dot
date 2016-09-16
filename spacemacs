@@ -94,11 +94,15 @@
   (setq cider-refresh-before-fn "user/stop"
         cider-refresh-after-fn  "user/start"))
 
+(defun set-indent-style ()
+  (setq clojure-indent-style :always-indent))
+
 (defun dotspacemacs/user-config ()
   (global-hl-line-mode -1)
   (setq-default line-spacing 5)
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
+  (add-hook 'clojure-mode-hook #'set-indent-style)
 
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
