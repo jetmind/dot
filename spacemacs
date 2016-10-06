@@ -95,7 +95,10 @@
         cider-refresh-after-fn  "user/start"))
 
 (defun set-indent-style ()
-  (setq clojure-indent-style :always-indent))
+  (setq clojure-indent-style :always-indent)
+  (define-clojure-indent
+    (->  0)
+    (->> 0)))
 
 (defun dotspacemacs/user-config ()
   (global-hl-line-mode -1)
