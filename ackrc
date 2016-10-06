@@ -1,6 +1,0 @@
---sort-files
---ignore-file=ext:pyc
---ignore-file=ext:log
---ignore-file=is:tags
---ignore-directory=is:Allura.egg-info
---ignore-directory=is:env-docker
