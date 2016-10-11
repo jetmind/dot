@@ -98,7 +98,9 @@
   (setq clojure-indent-style :always-indent)
   (define-clojure-indent
     (->  0)
-    (->> 0)))
+    (->> 0)
+    (and 0)
+    (or  0)))
 
 (defun dotspacemacs/user-config ()
   (global-hl-line-mode -1)
