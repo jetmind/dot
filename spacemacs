@@ -18,6 +18,7 @@
      html
      markdown
      yaml
+     javascript
    )
    dotspacemacs-additional-packages '(
      evil-smartparens
