@@ -101,7 +101,8 @@
     (->  0)
     (->> 0)
     (and 0)
-    (or  0)))
+    (or  0)
+    (=   0)))
 
 (defun dotspacemacs/user-config ()
   (global-hl-line-mode -1)
