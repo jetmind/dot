@@ -19,6 +19,7 @@
      markdown
      yaml
      javascript
+     sql
    )
    dotspacemacs-additional-packages '(
      evil-smartparens
