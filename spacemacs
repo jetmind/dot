@@ -20,6 +20,8 @@
      yaml
      javascript
      sql
+     django
+     theming
    )
    dotspacemacs-additional-packages '(
      evil-smartparens
@@ -34,15 +36,32 @@
    dotspacemacs-startup-banner 'official
    dotspacemacs-startup-lists '(recents projects)
    ;; Press <SPC> T n to cycle to the next theme in the list
-   dotspacemacs-themes '(minimal-light
-                         leuven
-                         spacemacs-light
-                         spacemacs-dark
+   dotspacemacs-themes '(leuven
+                         minimal-light
+                         ;; spacemacs-light
+                         ;; spacemacs-dark
                          ;; solarized-dark
                          ;; solarized-light
                          ;; monokai
                          ;; zenburn
                          )
+   theming-modifications '((leuven
+                            (font-lock-keyword-face :foreground "#333")  ;; def, etc
+                            (font-lock-type-face :foreground "#333")  ;; namespace
+                            (font-lock-preprocessor-face :foreground "#333")  ;; interop
+                            (font-lock-builtin-face :foreground "#333")
+                            (highlight-numbers-number :foreground "#333")
+                            (font-lock-function-name-face :foreground "#333")
+                            (font-lock-variable-name-face :foreground "#333")
+                            (font-lock-constant-face :foreground "#333")  ;; keywords
+                            (font-lock-string-face :foreground "#8F8F8F")
+                            (font-lock-doc-face :foreground "#8F8F8F")
+
+                            ;; comments
+                            ;; (font-lock-comment-face :foreground "#22aa22" :background "#DDFFDD")
+                            ;; (hl-todo :background "#DDFFDD")
+                            ;; (font-lock-comment-delimiter-face :background "#DDFFDD")
+                            ))
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -76,7 +95,7 @@
    dotspacemacs-mode-line-unicode-symbols t
    dotspacemacs-smooth-scrolling t
    dotspacemacs-smartparens-strict-mode nil
-   dotspacemacs-highlight-delimiters 'all
+   dotspacemacs-highlight-delimiters nil
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
    dotspacemacs-default-package-repository nil
@@ -112,7 +131,7 @@
     (rem 0)))
 
 (defun dotspacemacs/user-config ()
-  (global-hl-line-mode -1)
+  ;; (global-hl-line-mode -1)
   (setq-default line-spacing 5)
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
