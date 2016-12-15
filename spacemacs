@@ -130,6 +130,13 @@
     (mod 0)
     (rem 0)))
 
+(defun setup-keybindings ()
+  (global-set-key (kbd "C-P") 'helm-projectile-find-file)
+  (define-key evil-insert-state-map (kbd "C-P") 'helm-projectile-find-file)
+  (define-key evil-normal-state-map (kbd "C-P") 'helm-projectile-find-file)
+  (define-key evil-visual-state-map (kbd "C-P") 'helm-projectile-find-file)
+  (global-set-key (kbd "C-S") 'spacemacs/helm-project-do-ag))
+
 (defun dotspacemacs/user-config ()
   ;; (global-hl-line-mode -1)
   (setq-default line-spacing 5)
@@ -142,4 +149,6 @@
 
   (setup-web-mode)
   (register-cider-refresh-hooks)
+
+  (setup-keybindings)
 )
