@@ -131,6 +131,12 @@
     (rem 0)))
 
 (defun setup-keybindings ()
+  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
+  (define-key evil-normal-state-map (kbd "C-l") 'sp-forward-symbol)
+  (define-key evil-normal-state-map (kbd "C-h") 'sp-backward-symbol)
+
   (global-set-key (kbd "C-P") 'helm-projectile-find-file)
   (define-key evil-insert-state-map (kbd "C-P") 'helm-projectile-find-file)
   (define-key evil-normal-state-map (kbd "C-P") 'helm-projectile-find-file)
@@ -143,12 +149,7 @@
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
   (add-hook 'clojure-mode-hook #'set-indent-style)
-
-  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-
   (setup-web-mode)
   (register-cider-refresh-hooks)
-
   (setup-keybindings)
 )
