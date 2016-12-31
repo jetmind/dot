@@ -130,18 +130,30 @@
     (mod 0)
     (rem 0)))
 
+
+(defun define-evil-map-key (key action)
+  (define-key evil-normal-state-map (kbd key) action)
+  (define-key evil-insert-state-map (kbd key) action)
+  (define-key evil-visual-state-map (kbd key) action))
+
+
 (defun setup-keybindings ()
-  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+  (define-key evil-normal-state-map "j" 'evil-next-visual-line)
+  (define-key evil-normal-state-map "k" 'evil-previous-visual-line)
 
-  (define-key evil-normal-state-map (kbd "C-l") 'sp-forward-symbol)
-  (define-key evil-normal-state-map (kbd "C-h") 'sp-backward-symbol)
+  ;; paredit
+  (define-evil-map-key "C-."   'paredit-forward-slurp-sexp)
+  (define-evil-map-key "C-,"   'paredit-forward-barf-sexp)
+  (define-evil-map-key "C-M-," 'paredit-backward-slurp-sexp)
+  (define-evil-map-key "C-M-." 'paredit-backward-barf-sexp)
+  (define-evil-map-key "C-k"   'paredit-split-sexp)
+  (define-evil-map-key "C-j"   'paredit-join-sexps)
+  (define-evil-map-key "C-M-k" 'paredit-splice-sexp)
 
+  ;; global
   (global-set-key (kbd "C-P") 'helm-projectile-find-file)
-  (define-key evil-insert-state-map (kbd "C-P") 'helm-projectile-find-file)
-  (define-key evil-normal-state-map (kbd "C-P") 'helm-projectile-find-file)
-  (define-key evil-visual-state-map (kbd "C-P") 'helm-projectile-find-file)
-  (global-set-key (kbd "C-S") 'spacemacs/helm-project-do-ag))
+  (global-set-key (kbd "C-S") 'spacemacs/helm-project-do-ag)
+  (define-evil-map-key "C-P"  'helm-projectile-find-file))
 
 (defun dotspacemacs/user-config ()
   ;; (global-hl-line-mode -1)
