@@ -22,6 +22,7 @@
      sql
      django
      theming
+     osx
    )
    dotspacemacs-additional-packages '(
      evil-smartparens
@@ -56,6 +57,7 @@
                             (font-lock-constant-face :foreground "#333")  ;; keywords
                             (font-lock-string-face :foreground "#8F8F8F")
                             (font-lock-doc-face :foreground "#8F8F8F")
+                            (font-lock-comment-face :slant normal)
 
                             ;; comments
                             ;; (font-lock-comment-face :foreground "#22aa22" :background "#DDFFDD")
@@ -66,8 +68,8 @@
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fira Mono"
-                               :size 20
+   dotspacemacs-default-font '("Fira Code"
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -157,6 +159,7 @@
 
 (defun dotspacemacs/user-config ()
   ;; (global-hl-line-mode -1)
+  (mac-auto-operator-composition-mode)
   (setq-default line-spacing 5)
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
