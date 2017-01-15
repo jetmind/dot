@@ -23,6 +23,7 @@
      django
      theming
      osx
+     swift
    )
    dotspacemacs-additional-packages '(
      evil-smartparens
