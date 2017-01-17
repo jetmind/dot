@@ -147,11 +147,11 @@
   ;; paredit
   (define-evil-map-key "C-."   'paredit-forward-slurp-sexp)
   (define-evil-map-key "C-,"   'paredit-forward-barf-sexp)
-  (define-evil-map-key "C-M-," 'paredit-backward-slurp-sexp)
-  (define-evil-map-key "C-M-." 'paredit-backward-barf-sexp)
-  (define-evil-map-key "C-k"   'paredit-split-sexp)
-  (define-evil-map-key "C-j"   'paredit-join-sexps)
-  (define-evil-map-key "C-M-k" 'paredit-splice-sexp)
+  (define-evil-map-key "C-s-," 'paredit-backward-slurp-sexp)
+  (define-evil-map-key "C-s-." 'paredit-backward-barf-sexp)
+  (define-evil-map-key "C-s-k" 'paredit-split-sexp)
+  (define-evil-map-key "C-s-j" 'paredit-join-sexps)
+  (define-evil-map-key "C-k"   'paredit-splice-sexp)
 
   ;; global
   (global-set-key (kbd "C-P") 'helm-projectile-find-file)
