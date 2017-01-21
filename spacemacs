@@ -27,7 +27,12 @@
    )
    dotspacemacs-additional-packages '(
      evil-smartparens
-   )
+     (reason-mode
+      :location
+      (recipe :fetcher github
+              :repo "facebook/reason"
+              :files ("editorSupport/emacs/reason-mode.el"
+                      "editorSupport/emacs/refmt.el"))))
    dotspacemacs-excluded-packages '()
    dotspacemacs-delete-orphan-packages t))
 
