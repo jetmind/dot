@@ -1,2 +1,0 @@
-#!/bin/sh
-gvim -geometry 80x30 $*

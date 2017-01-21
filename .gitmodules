@@ -28,9 +28,6 @@
 [submodule "vim/bundle/clojure"]
 	path = vim/bundle/clojure
 	url = https://github.com/vim-scripts/VimClojure
-[submodule "awesome/themes"]
-	path = awesome/themes
-	url = git://github.com/mikar/awesome-themes.git
 [submodule "vim/bundle/jshint"]
 	path = vim/bundle/jshint
 	url = git://github.com/walm/jshint.vim.git
