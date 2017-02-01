@@ -12,8 +12,8 @@
   ci = commit
   st = status
   b = branch
-  df = diff
-  dfc = diff --cached
+  df = diff --ignore-space-change
+  dfc = diff --ignore-space-change --cached
   l = log --decorate --stat --graph --relative-date
   ll = log --decorate --stat --graph --patch
   l1 = log --pretty=oneline --graph --abbrev-commit
