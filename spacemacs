@@ -15,6 +15,7 @@
      clojure
      python
      ocaml
+     rust
      html
      markdown
      yaml
@@ -27,6 +28,7 @@
    )
    dotspacemacs-additional-packages '(
      evil-smartparens
+     restclient
      (reason-mode
       :location
       (recipe :fetcher github
@@ -128,6 +130,9 @@
   (define-clojure-indent
     (->  0)
     (->> 0)
+    (some-> 0)
+    (some->> 0)
+    (as-> 0)
     (and 0)
     (or  0)
     (=   0)
@@ -159,9 +164,10 @@
   (define-evil-map-key "C-k"   'paredit-splice-sexp)
 
   ;; global
-  (global-set-key (kbd "C-P") 'helm-projectile-find-file)
-  (global-set-key (kbd "C-S") 'spacemacs/helm-project-do-ag)
-  (define-evil-map-key "C-P"  'helm-projectile-find-file))
+  (global-set-key (kbd "s-t") 'split-window-right-and-focus)
+  (global-set-key (kbd "C-p") 'helm-projectile-find-file)
+  (global-set-key (kbd "C-s") 'spacemacs/helm-project-do-ag)
+  (define-evil-map-key "C-p"  'helm-projectile-find-file))
 
 (defun dotspacemacs/user-config ()
   ;; (global-hl-line-mode -1)
