@@ -11,3 +11,19 @@ fi
 alias o="open"
 alias g="ag --path-to-ignore=~/.agignore"
 alias e="emacsclient -n"
+
+
+export PATH=/Users/jetmind/bin:"${PATH}"
+
+
+# Swift configuration
+
+export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
+
+
+# OPAM configuration
+. /Users/jetmind/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+
+# Go
+export GOPATH=$HOME/p/go
