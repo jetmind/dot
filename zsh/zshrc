@@ -13,7 +13,7 @@ alias g="ag --path-to-ignore=~/.agignore"
 alias e="emacsclient -n"
 
 
-export PATH=/Users/jetmind/bin:"${PATH}"
+export PATH=/Users/jetmind/.local/bin:"${PATH}"
 
 
 # Swift configuration
