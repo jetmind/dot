@@ -16,6 +16,7 @@
      python
      ocaml
      rust
+     haskell
      html
      markdown
      yaml
