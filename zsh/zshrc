@@ -22,8 +22,11 @@ export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PA
 
 
 # OPAM configuration
-. /Users/jetmind/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+. "$HOME/.opam/opam-init/init.sh" > /dev/null 2> /dev/null || true
 
 
 # Go
-export GOPATH=$HOME/p/go
+export GOPATH="$HOME/p/go"
+
+# rustup
+export PATH="$HOME/.cargo/bin:$PATH"
