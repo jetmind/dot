@@ -10,12 +10,13 @@
      ;; List: https://github.com/syl20bnr/spacemacs/tree/master/layers
      auto-completion
      emacs-lisp
-     (git :variables
-          git-magit-status-fullscreen t)
+     (git :variables git-magit-status-fullscreen t)
      clojure
      python
      ocaml
-     rust
+     (rust :variables
+           racer-rust-src-path
+           "~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src")
      haskell
      html
      markdown
