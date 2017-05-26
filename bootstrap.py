@@ -10,12 +10,15 @@ dot_base = os.getcwd()
 
 # (target, symlink)
 symlinks = [
+    ('hammerspoon.lua', '.hammerspoon/init.lua'),
+    ('karabiner.json', '.config/karabiner/karabiner.json'),
+
     ('gitignore_global', '.gitignore_global'),
     ('agignore', '.agignore'),
 
     # vim
-    ('vim', '.vim'),
-    ('vimrc', '.vimrc'),
+    #('vim', '.vim'),
+    #('vimrc', '.vimrc'),
 
     # LightTable
     #('LightTable/User', '.config/LightTable/User'),
@@ -33,7 +36,7 @@ symlinks = [
 
     # zsh
     ('zsh/zshrc', '.zshrc'),
-    ('zsh/jetprose.zsh-theme', '.oh-my-zsh/themes/jetprose.zsh-theme'),
+    #('zsh/jetprose.zsh-theme', '.oh-my-zsh/themes/jetprose.zsh-theme'),
 
     # ack
 #    ('ackrc', '.ackrc'),
@@ -83,9 +86,12 @@ def init_vim():
 
 
 # run this before making symlinks
-before = [install_zsh]
+# before = [install_zsh]
 # run this after making symlinks
-after = [init_vim]
+# after = [init_vim]
+
+before = []
+after = []
 
 
 def bootstrap():
