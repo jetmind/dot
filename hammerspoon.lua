@@ -37,6 +37,10 @@ hs.hotkey.bind({"cmd"}, "4", function()
     hs.application.launchOrFocus("Slack")
 end)
 
+hs.hotkey.bind({"cmd"}, "9", function()
+    hs.application.launchOrFocus("Telegram Desktop")
+end)
+
 hs.hotkey.bind({"cmd"}, "0", function()
     hs.application.launchOrFocus("iTunes")
 end)
