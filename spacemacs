@@ -171,7 +171,7 @@
   (global-set-key (kbd "C-p") 'helm-projectile-find-file)
   (global-set-key (kbd "s-p") 'helm-projectile-find-file)
   (define-evil-map-key "C-p"  'helm-projectile-find-file)
-  (define-evil-map-key (kbd "s-p") 'helm-projectile-find-file)
+  (define-evil-map-key "s-p"  'helm-projectile-find-file)
 
   (global-set-key (kbd "C-s") 'spacemacs/helm-project-do-ag))
 
@@ -179,6 +179,7 @@
   ;; (global-hl-line-mode -1)
   (mac-auto-operator-composition-mode)
   (setq-default line-spacing 5)
+  (setq vc-follow-symlinks t)
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
   (add-hook 'clojure-mode-hook #'set-indent-style)
