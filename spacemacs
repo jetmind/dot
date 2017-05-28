@@ -59,9 +59,9 @@
    theming-modifications '((leuven
                             (default :background "#F7F7F7" :foreground "#000")
                             (font-lock-builtin-face :foreground "#000")
-                            (font-lock-type-face :foreground "#000")          ;; namespaces
-                            (font-lock-keyword-face :foreground "#000")       ;; def
-                            (font-lock-preprocessor-face :foreground "#000")  ;; interop
+                            (font-lock-type-face :foreground nil)          ;; namespaces
+                            (font-lock-keyword-face :foreground nil)       ;; def
+                            (font-lock-preprocessor-face :foreground nil)  ;; interop
                             (cursor :foreground "#007ACC" :background "#007ACC")
                             (hl-line :background "#F0F0F0")
 
@@ -73,6 +73,8 @@
                             (evil-ex-substitute-matches :background "#FFBC5D")
                             (evil-ex-substitute-replacement :background "#FFE9A6")
                             (evil-search-highlight-persist-highlight-face :background "#FFE9A6")
+                            (ahs-face :background "#FFE9A6")
+                            (ahs-plugin-whole-buffer-face :background "#FFBC5D")
                             ;; TODO: parens and other punctuation
 
                             ;; Strings
