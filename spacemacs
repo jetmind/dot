@@ -57,25 +57,46 @@
                          ;; zenburn
                          )
    theming-modifications '((leuven
-                            (font-lock-keyword-face :foreground "#333")  ;; def, etc
-                            (font-lock-type-face :foreground "#333")  ;; namespace
-                            (font-lock-preprocessor-face :foreground "#333")  ;; interop
-                            (font-lock-builtin-face :foreground "#333")
-                            (highlight-numbers-number :foreground "#333")
-                            (font-lock-function-name-face :foreground "#333")
-                            (font-lock-variable-name-face :foreground "#333")
-                            (font-lock-constant-face :foreground "#333")  ;; keywords
-                            (font-lock-string-face :foreground "#8F8F8F")
-                            (font-lock-doc-face :foreground "#8F8F8F")
-                            (font-lock-comment-face :slant normal)
+                            (default :background "#F7F7F7" :foreground "#000")
+                            (font-lock-builtin-face :foreground "#000")
+                            (font-lock-type-face :foreground "#000")          ;; namespaces
+                            (font-lock-keyword-face :foreground "#000")       ;; def
+                            (font-lock-preprocessor-face :foreground "#000")  ;; interop
+                            (cursor :foreground "#007ACC" :background "#007ACC")
+                            (hl-line :background "#F0F0F0")
 
-                            ;; comments
-                            ;; (font-lock-comment-face :foreground "#22aa22" :background "#DDFFDD")
-                            ;; (hl-todo :background "#DDFFDD")
-                            ;; (font-lock-comment-delimiter-face :background "#DDFFDD")
+                            (helm-selection :background "#BFDBFE")
+                            (region :background "#BFDBFE")
+
+                            (iserach :background "#FFE9A6")
+                            (lazy-highlight :background "#FFBC5D")
+                            (evil-ex-substitute-matches :background "#FFBC5D")
+                            (evil-ex-substitute-replacement :background "#FFE9A6")
+                            (evil-search-highlight-persist-highlight-face :background "#FFE9A6")
+                            ;; TODO: parens and other punctuation
+
+                            ;; Strings
+                            (font-lock-string-face :foreground "#448C27")
+                            (font-lock-doc-face :foreground "#448C27")
+                            (bold :foreground "#777777" :weight normal)  ;; clojure string escape sequence
+
+                            ;; All statically known constants (numbers, symbols, keywords, booleans)
+                            (font-lock-constant-face :foreground "#7A3E9D")  ;; keywords
+                            (clojure-keyword-face :foreground "#7A3E9D")
+                            (highlight-numbers-number :foreground "#7A3E9D")
+
+                            ;; Comments
+                            (font-lock-comment-face :foreground "#AA3731"
+                                                    :slant normal)
+                            (font-lock-comment-delimiter-face :foreground "#AA3731")
+                            (hl-todo :foreground "#AA3731")
+
+                            ;; Global definitions
+                            (font-lock-function-name-face :foreground "#325CC0")
+                            (font-lock-variable-name-face :foreground "#325CC0")
                             ))
    ;; If non nil the cursor color matches the state color.
-   dotspacemacs-colorize-cursor-according-to-state t
+   dotspacemacs-colorize-cursor-according-to-state nil
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Code"
@@ -175,8 +196,14 @@
 
   (global-set-key (kbd "C-s") 'spacemacs/helm-project-do-ag))
 
+
+(defun setup-colors ()
+  (setq hl-todo-keyword-faces ()))
+
+
 (defun dotspacemacs/user-config ()
   ;; (global-hl-line-mode -1)
+  (setup-colors)
   (mac-auto-operator-composition-mode)
   (setq-default line-spacing 5)
   (setq vc-follow-symlinks t)
