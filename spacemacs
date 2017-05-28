@@ -167,9 +167,13 @@
 
   ;; global
   (global-set-key (kbd "s-t") 'split-window-right-and-focus)
+
   (global-set-key (kbd "C-p") 'helm-projectile-find-file)
-  (global-set-key (kbd "C-s") 'spacemacs/helm-project-do-ag)
-  (define-evil-map-key "C-p"  'helm-projectile-find-file))
+  (global-set-key (kbd "s-p") 'helm-projectile-find-file)
+  (define-evil-map-key "C-p"  'helm-projectile-find-file)
+  (define-evil-map-key (kbd "s-p") 'helm-projectile-find-file)
+
+  (global-set-key (kbd "C-s") 'spacemacs/helm-project-do-ag))
 
 (defun dotspacemacs/user-config ()
   ;; (global-hl-line-mode -1)
