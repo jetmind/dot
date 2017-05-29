@@ -57,8 +57,8 @@
                          ;; zenburn
                          )
    theming-modifications '((leuven
-                            (default :background "#F7F7F7" :foreground "#000")
-                            (font-lock-builtin-face :foreground "#000")
+                            (default :background "#F7F7F7" :foreground "#333")
+                            (font-lock-builtin-face :foreground "#333")
                             (font-lock-type-face :foreground nil)          ;; namespaces
                             (font-lock-keyword-face :foreground nil)       ;; def
                             (font-lock-preprocessor-face :foreground nil)  ;; interop
