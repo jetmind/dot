@@ -1,0 +1,8 @@
+# The second line of modules may depend on options set by modules in the first line.
+zmodules=(directory environment history input utility meta custom \
+          syntax-highlighting history-substring-search prompt completion)
+
+
+zprompt_theme='steeef'
+
+zhighlighters=(main brackets cursor)

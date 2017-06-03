@@ -36,6 +36,7 @@ symlinks = [
 
     # zsh
     ('zsh/zshrc', '.zshrc'),
+    ('zsh/zimrc', '.zimrc'),
     #('zsh/jetprose.zsh-theme', '.oh-my-zsh/themes/jetprose.zsh-theme'),
 
     # ack
