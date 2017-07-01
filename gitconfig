@@ -14,7 +14,7 @@
   b = branch
   df = diff --ignore-space-change
   dfc = diff --ignore-space-change --cached
-  l = log --decorate --stat --graph --relative-date
+  l = log --decorate --stat --graph
   ll = log --decorate --stat --graph --patch
   l1 = log --pretty=oneline --graph --abbrev-commit
   pushm = push origin master
