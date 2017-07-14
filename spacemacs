@@ -76,6 +76,7 @@
                             (ahs-face :background "#FFE9A6")
                             (ahs-plugin-whole-buffer-face :background "#FFBC5D")
                             ;; TODO: parens and other punctuation
+                            (show-paren-match :foreground nil :background nil)
 
                             ;; Strings
                             (font-lock-string-face :foreground "#448C27")
@@ -196,6 +197,8 @@
   (define-evil-map-key "C-p"  'helm-projectile-find-file)
   (define-evil-map-key "s-p"  'helm-projectile-find-file)
 
+  (global-set-key (kbd "C-;") 'er/expand-region)
+
   (global-set-key (kbd "C-s") 'spacemacs/helm-project-do-ag))
 
 
@@ -209,10 +212,14 @@
   (mac-auto-operator-composition-mode)
   (setq-default line-spacing 5)
   (setq vc-follow-symlinks t)
-  (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
+  (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'set-indent-style)
   (setup-web-mode)
-  (register-cider-refresh-hooks)
+  ;; (register-cider-refresh-hooks)
   (setup-keybindings)
+
+  (custom-set-variables
+   '(cljr-auto-clean-ns nil)
+   '(cljr-auto-sort-ns nil))
 )
