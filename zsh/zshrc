@@ -9,8 +9,12 @@ fi
 # aliases
 
 alias o="open"
-alias g="ag --path-to-ignore=~/.agignore"
 alias e="emacsclient -n"
+
+
+function ge() {
+    rg -l "$1" 2>/dev/null | fzf --select-1 | xargs emacsclient --no-wait
+}
 
 
 export PATH=/Users/jetmind/.local/bin:"${PATH}"

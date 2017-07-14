@@ -14,7 +14,6 @@ symlinks = [
     ('karabiner.json', '.config/karabiner/karabiner.json'),
 
     ('gitignore_global', '.gitignore_global'),
-    ('agignore', '.agignore'),
 
     # vim
     #('vim', '.vim'),
