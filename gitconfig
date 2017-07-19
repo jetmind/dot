@@ -12,12 +12,15 @@
   ci = commit
   st = status
   b = branch
+  r = rebase
+  rc = rebase --continue
+  ra = rebase --abort
+  pf = push --force-with-lease
   df = diff --ignore-space-change
   dfc = diff --ignore-space-change --cached
   l = log --decorate --stat --graph
   ll = log --decorate --stat --graph --patch
   l1 = log --pretty=oneline --graph --abbrev-commit
-  pushm = push origin master
 
 [push]
   default = current
