@@ -76,7 +76,7 @@
                             (ahs-face :background "#FFE9A6")
                             (ahs-plugin-whole-buffer-face :background "#FFBC5D")
                             ;; TODO: parens and other punctuation
-                            (show-paren-match :foreground nil :background nil)
+                            (show-paren-match :foreground "#AA3731" :background nil)
 
                             ;; Strings
                             (font-lock-string-face :foreground "#448C27")
