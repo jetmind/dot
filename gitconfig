@@ -13,6 +13,7 @@
   st = status
   b = branch
   r = rebase
+  rma = rebase origin/master
   rc = rebase --continue
   ra = rebase --abort
   pf = push --force-with-lease

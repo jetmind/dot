@@ -180,6 +180,11 @@
   (define-key evil-normal-state-map "j" 'evil-next-visual-line)
   (define-key evil-normal-state-map "k" 'evil-previous-visual-line)
 
+  ;; cider
+  (define-key evil-normal-state-map (kbd "C-<return>") 'cider-eval-defun-at-point)
+  (define-key evil-insert-state-map (kbd "C-<return>") 'cider-eval-defun-at-point)
+  (define-key evil-visual-state-map (kbd "C-<return>") 'cider-eval-region)
+
   ;; paredit
   (define-evil-map-key "C-."   'paredit-forward-slurp-sexp)
   (define-evil-map-key "C-,"   'paredit-forward-barf-sexp)
