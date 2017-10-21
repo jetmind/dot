@@ -20,6 +20,11 @@ function ge() {
 export PATH=/Users/jetmind/.local/bin:"${PATH}"
 
 
+# Java
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_151)
+
+
 # Swift configuration
 
 export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
