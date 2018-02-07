@@ -21,7 +21,7 @@
      html
      markdown
      yaml
-     javascript
+     (javascript :variables tern-command nil)
      sql
      django
      theming
@@ -128,12 +128,12 @@
    dotspacemacs-maximized-at-startup nil
    dotspacemacs-active-transparency 90
    dotspacemacs-inactive-transparency 90
-   dotspacemacs-mode-line-unicode-symbols t
+   dotspacemacs-mode-line-unicode-symbols nil
    dotspacemacs-smooth-scrolling t
    dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-highlight-delimiters nil
    dotspacemacs-persistent-server nil
-   dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("rg")
    dotspacemacs-default-package-repository nil
    ))
 
@@ -161,7 +161,12 @@
     (as-> 0)
     (and 0)
     (or  0)
+    (>   0)
+    (<   0)
+    (>=  0)
+    (<=  0)
     (=   0)
+    (not= 0)
     (+   0)
     (-   0)
     (*   0)
@@ -181,30 +186,26 @@
   (define-key evil-normal-state-map "k" 'evil-previous-visual-line)
 
   ;; cider
-  (define-key evil-normal-state-map (kbd "C-<return>") 'cider-eval-defun-at-point)
-  (define-key evil-insert-state-map (kbd "C-<return>") 'cider-eval-defun-at-point)
-  (define-key evil-visual-state-map (kbd "C-<return>") 'cider-eval-region)
+  (define-key evil-normal-state-map (kbd "s-<return>") 'cider-eval-defun-at-point)
+  (define-key evil-insert-state-map (kbd "s-<return>") 'cider-eval-defun-at-point)
+  (define-key evil-visual-state-map (kbd "s-<return>") 'cider-eval-region)
 
-  ;; paredit
-  (define-evil-map-key "C-."   'paredit-forward-slurp-sexp)
-  (define-evil-map-key "C-,"   'paredit-forward-barf-sexp)
-  (define-evil-map-key "C-s-," 'paredit-backward-slurp-sexp)
-  (define-evil-map-key "C-s-." 'paredit-backward-barf-sexp)
-  (define-evil-map-key "C-s-k" 'paredit-split-sexp)
-  (define-evil-map-key "C-s-j" 'paredit-join-sexps)
-  (define-evil-map-key "C-k"   'paredit-splice-sexp)
+   ;; paredit
+  (define-evil-map-key "s-." 'paredit-forward-slurp-sexp)
+  (define-evil-map-key "s-," 'paredit-forward-barf-sexp)
+  (define-evil-map-key "s-<" 'paredit-backward-slurp-sexp)
+  (define-evil-map-key "s->" 'paredit-backward-barf-sexp)
+  (define-evil-map-key "s-k" 'paredit-splice-sexp)
 
   ;; global
   (global-set-key (kbd "s-t") 'split-window-right-and-focus)
 
-  (global-set-key (kbd "C-p") 'helm-projectile-find-file)
   (global-set-key (kbd "s-p") 'helm-projectile-find-file)
-  (define-evil-map-key "C-p"  'helm-projectile-find-file)
   (define-evil-map-key "s-p"  'helm-projectile-find-file)
 
   (global-set-key (kbd "C-;") 'er/expand-region)
 
-  (global-set-key (kbd "C-s") 'spacemacs/helm-project-do-ag))
+  (global-set-key (kbd "s-f") 'spacemacs/helm-project-do-ag))
 
 
 (defun setup-colors ()
@@ -214,6 +215,9 @@
 (defun dotspacemacs/user-config ()
   ;; (global-hl-line-mode -1)
   (setup-colors)
+
+  (setq helm-grep-ag-command "rg --smart-case --no-heading --line-number %s %s %s")
+
   (mac-auto-operator-composition-mode)
   (setq-default line-spacing 5)
   (setq vc-follow-symlinks t)
