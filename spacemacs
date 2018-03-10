@@ -235,6 +235,8 @@
   ;; (register-cider-refresh-hooks)
   (setup-keybindings)
 
+  (define-key clj-refactor-map (kbd "/") nil)  ;; disable 'cljr-slash
+
   (custom-set-variables
    '(cljr-auto-clean-ns nil)
    '(cljr-auto-sort-ns nil))
