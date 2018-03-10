@@ -155,7 +155,7 @@
   (setq cider-refresh-before-fn "user/stop"
         cider-refresh-after-fn  "user/start"))
 
-(defun set-indent-style ()
+(defun init-clojure-mode ()
   (setq clojure-indent-style :always-indent)
   (define-clojure-indent
     (->  0)
@@ -177,6 +177,11 @@
     (/   0)
     (mod 0)
     (rem 0)))
+
+
+(defun init-cider-mode ()
+  ;; disable 'cljr-slash
+  (define-key clj-refactor-map (kbd "/") nil))
 
 
 (defun define-evil-map-key (key action)
@@ -230,14 +235,12 @@
   (setq vc-follow-symlinks t)
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
-  (add-hook 'clojure-mode-hook #'set-indent-style)
+  (add-hook 'clojure-mode-hook #'init-clojure-mode)
+  (add-hook 'cider-mode-hook   #'init-cider-mode)
   (setup-web-mode)
   ;; (register-cider-refresh-hooks)
   (setup-keybindings)
 
-  (define-key clj-refactor-map (kbd "/") nil)  ;; disable 'cljr-slash
-
   (custom-set-variables
    '(cljr-auto-clean-ns nil)
-   '(cljr-auto-sort-ns nil))
-)
+   '(cljr-auto-sort-ns nil)))
