@@ -8,35 +8,38 @@
    '(
      ;; Press <SPC f e R> to reload config
      ;; List: https://github.com/syl20bnr/spacemacs/tree/master/layers
-     auto-completion
+     ivy
+     ;; auto-completion
      emacs-lisp
      (git :variables git-magit-status-fullscreen t)
      clojure
-     python
-     ocaml
-     (rust :variables
-           racer-rust-src-path
-           "~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src")
-     haskell
+     ;; python
+     ;; ocaml
+     ;; (rust :variables
+     ;;       racer-rust-src-path
+     ;;       "~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src")
+     ;; haskell
      html
      markdown
      yaml
-     (javascript :variables tern-command nil)
+     ;; (javascript :variables tern-command nil)
      sql
-     django
+     ;; django
      theming
      osx
-     swift
+     ;; swift
    )
    dotspacemacs-additional-packages '(
      evil-smartparens
-     restclient
-     (reason-mode
-      :location
-      (recipe :fetcher github
-              :repo "facebook/reason"
-              :files ("editorSupport/emacs/reason-mode.el"
-                      "editorSupport/emacs/refmt.el"))))
+     imenu-anywhere
+     ;; restclient
+     ;; (reason-mode
+     ;;  :location
+     ;;  (recipe :fetcher github
+     ;;          :repo "facebook/reason"
+     ;;          :files ("editorSupport/emacs/reason-mode.el"
+     ;;                  "editorSupport/emacs/refmt.el")))
+     )
    dotspacemacs-excluded-packages '()
    dotspacemacs-delete-orphan-packages t))
 
@@ -190,7 +193,7 @@
   (define-key evil-insert-state-map (kbd "s-<return>") 'cider-eval-defun-at-point)
   (define-key evil-visual-state-map (kbd "s-<return>") 'cider-eval-region)
 
-   ;; paredit
+  ;; paredit
   (define-evil-map-key "s-." 'paredit-forward-slurp-sexp)
   (define-evil-map-key "s-," 'paredit-forward-barf-sexp)
   (define-evil-map-key "s-<" 'paredit-backward-slurp-sexp)
@@ -199,13 +202,16 @@
 
   ;; global
   (global-set-key (kbd "s-t") 'split-window-right-and-focus)
+  (global-set-key (kbd "s-p") 'counsel-projectile-find-file)
+  (define-evil-map-key "s-p"  'counsel-projectile-find-file)
+  (global-set-key (kbd "s-f") 'counsel-projectile-rg)
+  (global-set-key (kbd "s-i") 'imenu-anywhere)
 
-  (global-set-key (kbd "s-p") 'helm-projectile-find-file)
-  (define-evil-map-key "s-p"  'helm-projectile-find-file)
+  ;; (global-set-key (kbd "s-p") 'helm-projectile-find-file)
+  ;; (define-evil-map-key "s-p"  'helm-projectile-find-file)
+  ;; (global-set-key (kbd "s-f") 'spacemacs/helm-project-do-ag)
 
-  (global-set-key (kbd "C-;") 'er/expand-region)
-
-  (global-set-key (kbd "s-f") 'spacemacs/helm-project-do-ag))
+  (global-set-key (kbd "C-;") 'er/expand-region))
 
 
 (defun setup-colors ()
@@ -216,7 +222,7 @@
   ;; (global-hl-line-mode -1)
   (setup-colors)
 
-  (setq helm-grep-ag-command "rg --smart-case --no-heading --line-number %s %s %s")
+  ;; (setq helm-grep-ag-command "rg --smart-case --no-heading --line-number %s %s %s")
 
   (mac-auto-operator-composition-mode)
   (setq-default line-spacing 5)
