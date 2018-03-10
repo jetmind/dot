@@ -12,7 +12,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # aliases
 
 alias o="open"
-alias e="emacsclient -n"
+alias e="emacsclient --no-wait"
 
 
 function fe() {
