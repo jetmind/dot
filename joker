@@ -1,0 +1,13 @@
+{:known-macros
+ [clojure.java.jdbc/with-db-transaction
+
+  better-cond.core/cond
+  better-cond.core/if-let
+  better-cond.core/when-let
+
+  schema.core/defschema
+
+  rum.core/defc
+  rum.core/defcs
+
+  hub.db/with-tx]}

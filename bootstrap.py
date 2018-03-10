@@ -51,6 +51,7 @@ symlinks = [
     ('profiles.clj', '.lein/profiles.clj'),
     ('inputrc', '.inputrc'),
     ('gitconfig', '.gitconfig'),
+    ('joker', '.joker'),
 #    ('terminator', '.config/terminator'),
 
     # mc

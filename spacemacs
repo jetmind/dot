@@ -32,6 +32,7 @@
    dotspacemacs-additional-packages '(
      evil-smartparens
      imenu-anywhere
+     flycheck-joker
      ;; restclient
      ;; (reason-mode
      ;;  :location
@@ -229,14 +230,16 @@
   ;; (global-hl-line-mode -1)
   (setup-colors)
 
-  ;; (setq helm-grep-ag-command "rg --smart-case --no-heading --line-number %s %s %s")
+  (require 'flycheck-joker)
 
   (mac-auto-operator-composition-mode)
   (setq-default line-spacing 5)
   (setq vc-follow-symlinks t)
+
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'init-clojure-mode)
+  (add-hook 'clojure-mode-hook #'flycheck-mode)
   (add-hook 'cider-mode-hook   #'init-cider-mode)
   (setup-web-mode)
   ;; (register-cider-refresh-hooks)
