@@ -1,5 +1,7 @@
 {:known-macros
- [clojure.java.jdbc/with-db-transaction
+ [bound-fn
+
+  clojure.java.jdbc/with-db-transaction
 
   better-cond.core/cond
   better-cond.core/if-let
@@ -11,5 +13,6 @@
   rum.core/defcs
 
   mount.core/defstate
+  manifold.deferred/let-flow
 
   hub.db/with-tx]}
