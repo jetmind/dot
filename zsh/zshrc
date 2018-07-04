@@ -13,6 +13,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 alias o="open"
 alias e="emacsclient --no-wait"
+alias fdbstart="sudo launchctl load -F /Library/LaunchDaemons/com.foundationdb.fdbmonitor.plist"
+alias fdbstop="sudo launchctl unload /Library/LaunchDaemons/com.foundationdb.fdbmonitor.plist"
 
 
 function fe() {
