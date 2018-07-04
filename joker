@@ -8,6 +8,7 @@
   better-cond.core/when-let
 
   schema.core/defschema
+  schema.core/defn
 
   rum.core/defc
   rum.core/defcs
