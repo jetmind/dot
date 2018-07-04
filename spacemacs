@@ -223,27 +223,35 @@
 
 
 (defun setup-colors ()
+  ;; (global-font-lock-mode -1)
   (setq hl-todo-keyword-faces ()))
+
+
+(defun setup-flycheck ()
+  (require 'flycheck-joker)
+  (add-hook 'clojure-mode-hook #'flycheck-mode)
+  (add-hook 'python-mode-hook  #'flycheck-mode))
 
 
 (defun dotspacemacs/user-config ()
   ;; (global-hl-line-mode -1)
   (setup-colors)
-
-  (require 'flycheck-joker)
-
   (mac-auto-operator-composition-mode)
   (setq-default line-spacing 5)
   (setq vc-follow-symlinks t)
 
+  (setup-flycheck)
+
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'init-clojure-mode)
-  (add-hook 'clojure-mode-hook #'flycheck-mode)
   (add-hook 'cider-mode-hook   #'init-cider-mode)
+
   (setup-web-mode)
   ;; (register-cider-refresh-hooks)
   (setup-keybindings)
+
+  ;; (load "~/.finda/integrations/emacs/finda.el")
 
   (custom-set-variables
    '(cljr-auto-clean-ns nil)
