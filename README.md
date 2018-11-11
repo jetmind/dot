@@ -1,15 +1,14 @@
+Requirements
+============
+
+* [Fira Code](https://github.com/tonsky/FiraCode/releases)
+
 Installation
 ============
 
     $ git clone ... ~/dot
     $ cd ~/dot
     $ python bootstrap.py
-
-Also need to install:
-
-* Terminus font
-* Zukitwo GTK theme
-* Faenza GTK icon theme
 
 Adding new configs
 ==================
