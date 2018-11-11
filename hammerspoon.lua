@@ -35,15 +35,16 @@ end)
 
 hs.hotkey.bind({"cmd"}, "4", function()
     hs.application.launchOrFocus("Slack")
+    -- hs.application.launchOrFocus("Zulip")
 end)
 
 hs.hotkey.bind({"cmd"}, "5", function()
-    hs.application.launchOrFocus("Safari")
+    hs.application.launchOrFocus("FirefoxDeveloperEdition")
 end)
 
 
 hs.hotkey.bind({"cmd"}, "6", function()
-    hs.application.launchOrFocus("FirefoxDeveloperEdition")
+    hs.application.launchOrFocus("Safari")
 end)
 
 hs.hotkey.bind({"cmd"}, "8", function()
