@@ -16,7 +16,7 @@
   rma = rebase origin/master
   rc = rebase --continue
   ra = rebase --abort
-  pf = push --force-with-lease
+  please = push --force-with-lease
   df = diff --ignore-space-change
   dfc = diff --ignore-space-change --cached
   l = log --decorate --stat --graph
