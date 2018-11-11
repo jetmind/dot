@@ -9,6 +9,7 @@
 
   schema.core/defschema
   schema.core/defn
+  schema.core/def
 
   rum.core/defc
   rum.core/defcs
