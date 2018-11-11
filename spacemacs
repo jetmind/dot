@@ -15,9 +15,9 @@
      clojure
      ;; python
      ;; ocaml
-     ;; (rust :variables
-     ;;       racer-rust-src-path
-     ;;       "~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src")
+     (rust :variables
+           racer-rust-src-path
+           "~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src")
      ;; haskell
      html
      markdown
@@ -33,6 +33,7 @@
      evil-smartparens
      imenu-anywhere
      flycheck-joker
+     flycheck-pyflakes
      ;; restclient
      ;; (reason-mode
      ;;  :location
@@ -178,7 +179,9 @@
     (*   0)
     (/   0)
     (mod 0)
-    (rem 0)))
+    (rem 0)
+    (max 0)
+    (min 0)))
 
 
 (defun init-cider-mode ()
@@ -229,6 +232,7 @@
 
 (defun setup-flycheck ()
   (require 'flycheck-joker)
+  (require 'flycheck-pyflakes)
   (add-hook 'clojure-mode-hook #'flycheck-mode)
   (add-hook 'python-mode-hook  #'flycheck-mode))
 
@@ -251,7 +255,7 @@
   ;; (register-cider-refresh-hooks)
   (setup-keybindings)
 
-  ;; (load "~/.finda/integrations/emacs/finda.el")
+  (load "~/.finda/integrations/emacs/finda.el")
 
   (custom-set-variables
    '(cljr-auto-clean-ns nil)
