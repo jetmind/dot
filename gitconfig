@@ -22,6 +22,7 @@
   l = log --decorate --stat --graph
   ll = log --decorate --stat --graph --patch
   l1 = log --pretty=oneline --graph --abbrev-commit
+  pushtag = !git push origin $(git symbolic-ref HEAD) && git push origin $(git tag --points-at HEAD)
 
 [push]
   default = current
