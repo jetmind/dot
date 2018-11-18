@@ -74,8 +74,5 @@ export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PA
 . "$HOME/.opam/opam-init/init.sh" > /dev/null 2> /dev/null || true
 
 
-# Go
-export GOPATH="$HOME/p/go"
-
 # rustup
 export PATH="$HOME/.cargo/bin:$PATH"
