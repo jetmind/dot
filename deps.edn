@@ -1,5 +1,5 @@
 {:aliases {:rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.1"}}
                    :main-opts  ["-m" "rebel-readline.main"]}
 
-           :cljs {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.238"}}
+           :cljs {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.439"}}
                   :main-opts  ["-m" "cljs.main"]}}}
