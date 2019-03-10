@@ -37,10 +37,3 @@
   autosetupmerge = true
 [core]
 	excludesfile = /home/jetmind/.gitignore_global
-
-[transfer]
-  fsckobjects = true
-[fetch]
-  fsckobjects = true
-[receive]
-  fsckObjects = true
