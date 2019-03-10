@@ -25,6 +25,9 @@ export PATH=/Users/jetmind/.local/bin:"${PATH}"
 export EDITOR=nvim
 
 
+export GPG_TTY=$(tty)  # signing releases with lein doesn't work w/o this
+
+
 # Java
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
@@ -82,3 +85,14 @@ function gits() {
     done < <(sed '1d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
   done
 }
+
+# curl helpers
+
+function _POST { curl -H 'Content-Type: application/json' -XPOST "$@" }
+alias POST='noglob _POST'
+function _PUT { curl -H 'Content-Type: application/json' -XPUT "$@" }
+alias PUT='noglob _PUT'
+function _GET { curl -H 'Content-Type: application/json' -XGET "$@" }
+alias GET='noglob _GET'
+function _DELETE { curl -H 'Content-Type: application/json' -XDELETE "$@" }
+alias DELETE='noglob _DELETE'
