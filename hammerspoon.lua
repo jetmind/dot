@@ -31,6 +31,7 @@ end)
 
 hs.hotkey.bind({"cmd"}, "3", function()
     hs.application.launchOrFocus("emacs")
+    -- hs.application.launchOrFocus("IntelliJ IDEA CE")
 end)
 
 hs.hotkey.bind({"cmd"}, "4", function()
@@ -48,7 +49,8 @@ hs.hotkey.bind({"cmd"}, "6", function()
 end)
 
 hs.hotkey.bind({"cmd"}, "8", function()
-    hs.application.launchOrFocus("iTunes")
+    -- hs.application.launchOrFocus("iTunes")
+    hs.application.launchOrFocus("Google Play Music Desktop Player")
 end)
 
 hs.hotkey.bind({"cmd"}, "9", function()
