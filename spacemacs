@@ -112,8 +112,7 @@
    dotspacemacs-default-font '("Fira Code"
                                :size 14
                                :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
+                               :width normal)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    dotspacemacs-emacs-leader-key "M-m"
@@ -135,7 +134,8 @@
    dotspacemacs-maximized-at-startup nil
    dotspacemacs-active-transparency 90
    dotspacemacs-inactive-transparency 90
-   dotspacemacs-mode-line-unicode-symbols nil
+   dotspacemacs-mode-line-theme 'spacemacs
+   dotspacemacs-mode-line-unicode-symbols t
    dotspacemacs-smooth-scrolling t
    dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-highlight-delimiters nil
@@ -200,29 +200,33 @@
   (define-key evil-normal-state-map "k" 'evil-previous-visual-line)
 
   ;; cider
-  (define-key evil-normal-state-map (kbd "s-<return>") 'cider-eval-defun-at-point)
-  (define-key evil-insert-state-map (kbd "s-<return>") 'cider-eval-defun-at-point)
-  (define-key evil-visual-state-map (kbd "s-<return>") 'cider-eval-region)
+  (define-key evil-normal-state-map (kbd "H-<return>") 'cider-eval-defun-at-point)
+  (define-key evil-insert-state-map (kbd "H-<return>") 'cider-eval-defun-at-point)
+  (define-key evil-visual-state-map (kbd "H-<return>") 'cider-eval-region)
+
+  (define-key evil-normal-state-map (kbd "H-S-<return>") 'cider-inspect-defun-at-point)
+  (define-key evil-insert-state-map (kbd "H-S-<return>") 'cider-inspect-defun-at-point)
 
   ;; paredit
-  (define-evil-map-key "s-." 'paredit-forward-slurp-sexp)
-  (define-evil-map-key "s-," 'paredit-forward-barf-sexp)
-  (define-evil-map-key "s-<" 'paredit-backward-slurp-sexp)
-  (define-evil-map-key "s->" 'paredit-backward-barf-sexp)
-  (define-evil-map-key "s-k" 'paredit-splice-sexp)
+  (define-evil-map-key "H-." 'paredit-forward-slurp-sexp)
+  (define-evil-map-key "H-," 'paredit-forward-barf-sexp)
+  (define-evil-map-key "H-<" 'paredit-backward-slurp-sexp)
+  (define-evil-map-key "H->" 'paredit-backward-barf-sexp)
+  (define-evil-map-key "H-k" 'paredit-splice-sexp)
 
   ;; global
-  (global-set-key (kbd "s-t") 'split-window-right-and-focus)
-  (global-set-key (kbd "s-p") 'counsel-projectile-find-file)
-  (define-evil-map-key "s-p"  'counsel-projectile-find-file)
-  (global-set-key (kbd "s-f") 'counsel-projectile-rg)
-  (global-set-key (kbd "s-i") 'imenu-anywhere)
+  (global-set-key (kbd "H-t") 'split-window-right-and-focus)
+  (global-set-key (kbd "H-p") 'counsel-projectile-find-file)
+  (define-evil-map-key "H-p"  'counsel-projectile-find-file)
+  (global-set-key (kbd "H-f") 'counsel-projectile-rg)
+  (global-set-key (kbd "H-i") 'imenu-anywhere)
+  (global-set-key (kbd "H-e") 'ivy-switch-buffer)
+  (global-set-key (kbd "C-;") 'er/expand-region)
+  (define-key evil-normal-state-map (kbd "SPC SPC") 'spacemacs/evil-search-clear-highlight)
 
-  ;; (global-set-key (kbd "s-p") 'helm-projectile-find-file)
-  ;; (define-evil-map-key "s-p"  'helm-projectile-find-file)
-  ;; (global-set-key (kbd "s-f") 'spacemacs/helm-project-do-ag)
-
-  (global-set-key (kbd "C-;") 'er/expand-region))
+  ;; ex command aliases
+  (evil-ex-define-cmd "W" "w")
+  (evil-ex-define-cmd "E" "e"))
 
 
 (defun setup-colors ()
@@ -237,19 +241,32 @@
   (add-hook 'python-mode-hook  #'flycheck-mode))
 
 
+(defun setup-mode-line ()
+  (spaceline-toggle-hud-off)  ;; makes mode-line unnecessary wide
+  (spaceline-toggle-major-mode-off)
+  (spaceline-toggle-minor-modes-off)
+  (spaceline-toggle-buffer-encoding-abbrev-off))
+
+
 (defun dotspacemacs/user-config ()
   ;; (global-hl-line-mode -1)
   (setup-colors)
   (mac-auto-operator-composition-mode)
-  (setq-default line-spacing 5)
+  (setq-default line-spacing 0.5)
   (setq vc-follow-symlinks t)
+
+  (setq projectile-enable-caching t)
+  (setq projectile-indexing-method 'hybrid)
+
+  (setup-mode-line)
 
   (setup-flycheck)
 
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+  (add-hook 'clojure-mode-hook #'paredit-mode)
   (add-hook 'clojure-mode-hook #'init-clojure-mode)
-  (add-hook 'cider-mode-hook   #'init-cider-mode)
+  ;; (add-hook 'cider-mode-hook   #'init-cider-mode)
 
   (setup-web-mode)
   ;; (register-cider-refresh-hooks)
