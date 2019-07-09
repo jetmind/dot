@@ -1,7 +1,6 @@
 [user]
   name = Igor Bondarenko
   email = jetmind2@gmail.com
-  #email = i.bondarenko@modnakasta.ua
 
 [color]
   ui = true
@@ -21,7 +20,7 @@
   dfc = diff --ignore-space-change --cached
   l = log --decorate --stat --graph
   ll = log --decorate --stat --graph --patch
-  l1 = log --pretty=oneline --graph --abbrev-commit
+  l1 = log --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %Cgreen(%ci) %C(bold blue)<%an>%Creset %s' --abbrev-commit
   pushtag = !git push origin $(git symbolic-ref HEAD) && git push origin $(git tag --points-at HEAD)
 
 [push]
