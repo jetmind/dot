@@ -42,7 +42,7 @@
      ;;          :files ("editorSupport/emacs/reason-mode.el"
      ;;                  "editorSupport/emacs/refmt.el")))
      )
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(evil-escape)
    dotspacemacs-delete-orphan-packages t))
 
 (defun dotspacemacs/init ()
