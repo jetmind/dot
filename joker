@@ -3,6 +3,10 @@
 
   clojure.java.jdbc/with-db-transaction
 
+  clojure.test.check.generators/let
+  clojure.test.check.properties/for-all
+  clojure.test.check.clojure-test/defspec
+
   better-cond.core/cond
   better-cond.core/if-let
   better-cond.core/when-let
