@@ -49,8 +49,12 @@ hs.hotkey.bind({"cmd"}, "6", function()
 end)
 
 hs.hotkey.bind({"cmd"}, "8", function()
-    -- hs.application.launchOrFocus("iTunes")
-    hs.application.launchOrFocus("Google Play Music Desktop Player")
+    -- hs.application.launchOrFocus("Google Play Music Desktop Player")
+    hs.application.launchOrFocus("iTunes")
+end)
+
+hs.hotkey.bind({"cmd", "shift"}, "8", function()
+    hs.application.launchOrFocus("iTunes")
 end)
 
 hs.hotkey.bind({"cmd"}, "9", function()
