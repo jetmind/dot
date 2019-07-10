@@ -53,6 +53,7 @@
    dotspacemacs-startup-lists '(recents projects)
    dotspacemacs-ask-for-lazy-installation nil
    dotspacemacs-enable-lazy-installation nil
+   dotspacemacs-enable-server t
    ;; Press <SPC> T n to cycle to the next theme in the list
    dotspacemacs-themes '(leuven
                          minimal-light
