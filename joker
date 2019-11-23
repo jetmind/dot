@@ -20,5 +20,8 @@
 
   mount.core/defstate
   manifold.deferred/let-flow
+  manifold.deferred/loop
 
-  hub.db/with-tx]}
+  hub.db/with-tx]
+
+ :known-tags [t]}
