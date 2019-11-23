@@ -22,6 +22,7 @@ end)
 -- switch apps
 
 hs.hotkey.bind({"cmd"}, "1", function()
+    -- hs.application.launchOrFocus("Brave Browser")
     hs.application.launchOrFocus("Google Chrome")
 end)
 
@@ -50,7 +51,7 @@ end)
 
 hs.hotkey.bind({"cmd"}, "8", function()
     -- hs.application.launchOrFocus("Google Play Music Desktop Player")
-    hs.application.launchOrFocus("iTunes")
+    hs.application.launchOrFocus("Music")
 end)
 
 hs.hotkey.bind({"cmd", "shift"}, "8", function()
