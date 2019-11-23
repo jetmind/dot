@@ -1,6 +1,6 @@
 [user]
   name = Igor Bondarenko
-  email = jetmind2@gmail.com
+  email = i@jetmind.me
 
 [color]
   ui = true
@@ -35,4 +35,4 @@
 [branch]
   autosetupmerge = true
 [core]
-	excludesfile = /home/jetmind/.gitignore_global
+  excludesfile = /home/jetmind/.gitignore_global
