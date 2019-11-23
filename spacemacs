@@ -18,6 +18,7 @@
      (rust :variables
            racer-rust-src-path
            "~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src")
+     go
      ;; haskell
      html
      markdown
@@ -34,6 +35,7 @@
      imenu-anywhere
      flycheck-joker
      flycheck-pyflakes
+     po-mode
      ;; restclient
      ;; (reason-mode
      ;;  :location
@@ -56,7 +58,7 @@
    dotspacemacs-enable-server t
    ;; Press <SPC> T n to cycle to the next theme in the list
    dotspacemacs-themes '(leuven
-                         minimal-light
+                         ;; minimal-light
                          ;; spacemacs-light
                          ;; spacemacs-dark
                          ;; solarized-dark
@@ -111,7 +113,7 @@
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Code"
-                               :size 14
+                               :size 12
                                :weight normal
                                :width normal)
    ;; The leader key
@@ -169,6 +171,8 @@
     (as-> 0)
     (and 0)
     (or  0)
+    (and* 0)
+    (or* 0)
     (>   0)
     (<   0)
     (>=  0)
@@ -249,7 +253,16 @@
   (spaceline-toggle-buffer-encoding-abbrev-off))
 
 
+
+;; (defun init-po-mode ()
+;;   (define-evil-map-key "H-<return>" 'po-edit-msgstr)
+;;   (define-evil-map-key "C-j" 'po-next-untranslated-entry)
+;;   (define-key po-subedit-mode-map (kbd "h-<return>") 'po-subedit-exit))
+
+
 (defun dotspacemacs/user-config ()
+  (setenv "LANG" "en_US.UTF-8")
+
   ;; (global-hl-line-mode -1)
   (setup-colors)
   (mac-auto-operator-composition-mode)
@@ -267,6 +280,7 @@
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'paredit-mode)
   (add-hook 'clojure-mode-hook #'init-clojure-mode)
+  ;; (add-hook 'po-mode-hook #'init-po-mode)
   ;; (add-hook 'cider-mode-hook   #'init-cider-mode)
 
   (setup-web-mode)
