@@ -2,4 +2,8 @@
                    :main-opts  ["-m" "rebel-readline.main"]}
 
            :cljs {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.439"}}
-                  :main-opts  ["-m" "cljs.main"]}}}
+                  :main-opts  ["-m" "cljs.main"]}
+
+           :carve {:extra-deps {borkdude/carve {:git/url "https://github.com/borkdude/carve"
+                                                :sha     "8e219572f55485244fdc35ac605d19bc74e9be0e"}}
+                   :main-opts  ["-m" "carve.main"]}}}
