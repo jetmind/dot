@@ -20,6 +20,9 @@ alias fdbstart="sudo launchctl load -F /Library/LaunchDaemons/com.foundationdb.f
 alias fdbstop="sudo launchctl unload /Library/LaunchDaemons/com.foundationdb.fdbmonitor.plist"
 
 
+function _psql() { psql service="$@" }
+alias db='_psql'
+
 alias ej="jet --from edn  --to json"
 alias je="jet --from json --to edn --keywordize true"
 
