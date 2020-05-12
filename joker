@@ -2,6 +2,7 @@
  [bound-fn
 
   clojure.java.jdbc/with-db-transaction
+  clojure.java.jdbc/with-db-connection
 
   clojure.test.check.generators/let
   clojure.test.check.properties/for-all
