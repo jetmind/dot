@@ -12,7 +12,10 @@
      ;; auto-completion
      emacs-lisp
      (git :variables git-magit-status-fullscreen t)
-     clojure
+     (clojure :variables
+              clojure-enable-linters '(joker)
+              clojure-toplevel-inside-comment-form t)
+     syntax-checking
      ;; python
      ;; ocaml
      (rust :variables
@@ -163,9 +166,11 @@
 
 (defun init-clojure-mode ()
   (setq clojure-indent-style :always-indent)
+  ;; define-clojure-indent turns `(-> 0)` into `0` somehow...
+  (put-clojure-indent '-> 0)
+  (put-clojure-indent '->> 0)
   (define-clojure-indent
-    (->  0)
-    (->> 0)
+    (comp 0)
     (some-> 0)
     (some->> 0)
     (as-> 0)
@@ -209,8 +214,8 @@
   (define-key evil-insert-state-map (kbd "H-<return>") 'cider-eval-defun-at-point)
   (define-key evil-visual-state-map (kbd "H-<return>") 'cider-eval-region)
 
-  (define-key evil-normal-state-map (kbd "H-S-<return>") 'cider-inspect-defun-at-point)
-  (define-key evil-insert-state-map (kbd "H-S-<return>") 'cider-inspect-defun-at-point)
+  (define-key evil-normal-state-map (kbd "H-S-<return>") 'cider-eval-defun-to-comment)
+  (define-key evil-insert-state-map (kbd "H-S-<return>") 'cider-eval-defun-to-comment)
 
   ;; paredit
   (define-evil-map-key "H-." 'paredit-forward-slurp-sexp)
@@ -240,9 +245,9 @@
 
 
 (defun setup-flycheck ()
-  (require 'flycheck-joker)
+  ;; (require 'flycheck-joker)
+  ;; (add-hook 'clojure-mode-hook #'flycheck-mode)
   (require 'flycheck-pyflakes)
-  (add-hook 'clojure-mode-hook #'flycheck-mode)
   (add-hook 'python-mode-hook  #'flycheck-mode))
 
 
