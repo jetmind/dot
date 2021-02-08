@@ -13,7 +13,7 @@
      emacs-lisp
      (git :variables git-magit-status-fullscreen t)
      (clojure :variables
-              clojure-enable-linters '(joker)
+              clojure-enable-linters '(clj-kondo joker)
               clojure-toplevel-inside-comment-form t)
      syntax-checking
      ;; python
@@ -22,7 +22,7 @@
            racer-rust-src-path
            "~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src")
      go
-     ;; haskell
+     ;; (haskell :variables haskell-completion-backend 'dante)
      html
      markdown
      yaml
@@ -36,6 +36,7 @@
    dotspacemacs-additional-packages '(
      evil-smartparens
      imenu-anywhere
+     flycheck-clj-kondo
      flycheck-joker
      flycheck-pyflakes
      po-mode
@@ -155,6 +156,8 @@
 (defun setup-web-mode ()
   (setq-default
    css-indent-offset 2
+   js-indent-offset 2
+   js-indent-level 2
    web-mode-markup-indent-offset 2
    web-mode-css-indent-offset 2
    web-mode-code-indent-offset 2
@@ -241,6 +244,7 @@
 
 (defun setup-colors ()
   ;; (global-font-lock-mode -1)
+  (setq global-hl-todo-mode nil)
   (setq hl-todo-keyword-faces ()))
 
 
@@ -292,7 +296,7 @@
   ;; (register-cider-refresh-hooks)
   (setup-keybindings)
 
-  (load "~/.finda/integrations/emacs/finda.el")
+  ;; (load "~/.finda/integrations/emacs/finda.el")
 
   (custom-set-variables
    '(cljr-auto-clean-ns nil)
