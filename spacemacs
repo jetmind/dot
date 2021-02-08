@@ -48,7 +48,7 @@
      ;;          :files ("editorSupport/emacs/reason-mode.el"
      ;;                  "editorSupport/emacs/refmt.el")))
      )
-   dotspacemacs-excluded-packages '(evil-escape)
+   dotspacemacs-excluded-packages '(evil-escape hl-todo)
    dotspacemacs-delete-orphan-packages t))
 
 (defun dotspacemacs/init ()
@@ -106,7 +106,6 @@
                             (font-lock-comment-face :foreground "#AA3731"
                                                     :slant normal)
                             (font-lock-comment-delimiter-face :foreground "#AA3731")
-                            (hl-todo :foreground "#AA3731")
 
                             ;; Global definitions
                             (font-lock-function-name-face :foreground "#325CC0")
@@ -242,12 +241,6 @@
   (evil-ex-define-cmd "E" "e"))
 
 
-(defun setup-colors ()
-  ;; (global-font-lock-mode -1)
-  (setq global-hl-todo-mode nil)
-  (setq hl-todo-keyword-faces ()))
-
-
 (defun setup-flycheck ()
   ;; (require 'flycheck-joker)
   ;; (add-hook 'clojure-mode-hook #'flycheck-mode)
@@ -273,7 +266,6 @@
   (setenv "LANG" "en_US.UTF-8")
 
   ;; (global-hl-line-mode -1)
-  (setup-colors)
   (mac-auto-operator-composition-mode)
   (setq-default line-spacing 0.5)
   (setq vc-follow-symlinks t)
