@@ -35,7 +35,7 @@ export GPG_TTY=$(tty)  # signing releases with lein doesn't work w/o this
 
 # Java
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME=$(/usr/libexec/java_home -v 16)
 
 
 # Swift configuration
@@ -52,6 +52,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Go
 export GOPATH="$HOME/p/go"
+
+# Haskell
+. ~/.ghcup/env
 
 
 # fzf
