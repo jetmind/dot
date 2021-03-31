@@ -11,7 +11,6 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-
 # aliases
 
 alias o="open"
@@ -104,3 +103,5 @@ function _GET { curl -H 'Content-Type: application/json' -XGET "$@" }
 alias GET='noglob _GET'
 function _DELETE { curl -H 'Content-Type: application/json' -XDELETE "$@" }
 alias DELETE='noglob _DELETE'
+
+source ~/dot/zsh/private

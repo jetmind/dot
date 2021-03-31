@@ -6,3 +6,5 @@ LightTable/User/*.bak
 
 # nvim (just symlink to vimrc)
 vim/init.vim
+
+zsh/private
