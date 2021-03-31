@@ -12,6 +12,9 @@
   better-cond.core/if-let
   better-cond.core/when-let
 
+  clara.rules/defrule
+  clara.rules/defquery
+
   schema.core/defschema
   schema.core/defn
   schema.core/def
@@ -23,6 +26,7 @@
   manifold.deferred/let-flow
   manifold.deferred/loop
 
+  mk.jobs.tasks.tasks/deftask
   hub.db/with-tx]
 
  :known-tags [t]}
