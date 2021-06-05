@@ -29,27 +29,13 @@ export EDITOR=nvim
 export GPG_TTY=$(tty)  # signing releases with lein doesn't work w/o this
 
 
-# Java
-
+export PATH=/opt/homebrew/bin:"${PATH}"
 export JAVA_HOME=$(/usr/libexec/java_home -v 16)
 
-
-# Swift configuration
-
 export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
-
-
-# OPAM configuration
 . "$HOME/.opam/opam-init/init.sh" > /dev/null 2> /dev/null || true
-
-
-# rustup
 export PATH="$HOME/.cargo/bin:$PATH"
-
-# Go
 export GOPATH="$HOME/p/go"
-
-# Haskell
 . ~/.ghcup/env
 
 
