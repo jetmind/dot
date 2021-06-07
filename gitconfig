@@ -36,3 +36,5 @@
   autosetupmerge = true
 [core]
   excludesfile = /home/jetmind/.gitignore_global
+[pull]
+	ff = only
