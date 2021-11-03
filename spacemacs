@@ -215,8 +215,11 @@
   (define-key evil-insert-state-map (kbd "H-<return>") 'cider-eval-defun-at-point)
   (define-key evil-visual-state-map (kbd "H-<return>") 'cider-eval-region)
 
-  (define-key evil-normal-state-map (kbd "H-S-<return>") 'cider-eval-defun-to-comment)
-  (define-key evil-insert-state-map (kbd "H-S-<return>") 'cider-eval-defun-to-comment)
+  (define-key evil-normal-state-map (kbd "H-S-<return>") 'cider-pprint-eval-defun-at-point)
+  (define-key evil-insert-state-map (kbd "H-S-<return>") 'cider-pprint-eval-defun-at-point)
+
+  (define-key evil-normal-state-map (kbd "H-C-S-<return>") 'cider-eval-defun-to-comment)
+  (define-key evil-insert-state-map (kbd "H-C-S-<return>") 'cider-eval-defun-to-comment)
 
   ;; paredit
   (define-evil-map-key "H-." 'paredit-forward-slurp-sexp)
