@@ -33,6 +33,7 @@
      osx
      ;; swift
    )
+   dotspacemacs-install-packages 'used-but-keep-unused
    dotspacemacs-additional-packages '(
      evil-smartparens
      imenu-anywhere
@@ -40,13 +41,8 @@
      flycheck-joker
      flycheck-pyflakes
      po-mode
-     ;; restclient
-     ;; (reason-mode
-     ;;  :location
-     ;;  (recipe :fetcher github
-     ;;          :repo "facebook/reason"
-     ;;          :files ("editorSupport/emacs/reason-mode.el"
-     ;;                  "editorSupport/emacs/refmt.el")))
+     (av-psql :location local)
+     restclient
      )
    dotspacemacs-excluded-packages '(evil-escape hl-todo)
    dotspacemacs-delete-orphan-packages t))
@@ -56,7 +52,8 @@
    dotspacemacs-editing-style 'vim
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner 'official
-   dotspacemacs-startup-lists '(recents projects)
+   dotspacemacs-startup-lists '((recents . 5)
+                                (projects . 7))
    dotspacemacs-ask-for-lazy-installation nil
    dotspacemacs-enable-lazy-installation nil
    dotspacemacs-enable-server t
@@ -211,6 +208,8 @@
   (define-key evil-normal-state-map "j" 'evil-next-visual-line)
   (define-key evil-normal-state-map "k" 'evil-previous-visual-line)
 
+  ;; (define-key sql-mode-map (kbd "M-<return>") 'sql-send-paragraph)
+
   ;; cider
   (define-key evil-normal-state-map (kbd "H-<return>") 'cider-eval-defun-at-point)
   (define-key evil-insert-state-map (kbd "H-<return>") 'cider-eval-defun-at-point)
@@ -255,6 +254,10 @@
   (spaceline-toggle-buffer-encoding-abbrev-off))
 
 
+(defun setup-av-psql ()
+  (require 'av-psql)
+  (av-wireup-pg-stuff))
+
 
 ;; (defun init-po-mode ()
 ;;   (define-evil-map-key "H-<return>" 'po-edit-msgstr)
@@ -275,8 +278,8 @@
   (setq projectile-indexing-method 'hybrid)
 
   (setup-mode-line)
-
   (setup-flycheck)
+  (setup-av-psql)
 
   (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
