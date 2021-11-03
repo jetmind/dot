@@ -113,8 +113,8 @@
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Code"
-                               :size 14
-                               :weight light
+                               :size 12
+                               :weight normal
                                :width normal)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
