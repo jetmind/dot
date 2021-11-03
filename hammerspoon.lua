@@ -23,8 +23,9 @@ end)
 
 hs.hotkey.bind({"cmd"}, "1", function()
     -- hs.application.launchOrFocus("Brave Browser")
-    hs.application.launchOrFocus("Google Chrome")
+    -- hs.application.launchOrFocus("Google Chrome")
     -- hs.application.launchOrFocus("Safari")
+    hs.application.launchOrFocus("Firefox")
 end)
 
 hs.hotkey.bind({"cmd"}, "2", function()
@@ -42,7 +43,8 @@ hs.hotkey.bind({"cmd"}, "4", function()
 end)
 
 hs.hotkey.bind({"cmd"}, "5", function()
-    hs.application.launchOrFocus("FirefoxDeveloperEdition")
+    hs.application.launchOrFocus("Firefox")
+    -- hs.application.launchOrFocus("FirefoxDeveloperEdition")
 end)
 
 
