@@ -193,11 +193,6 @@
     (min 0)))
 
 
-(defun init-cider-mode ()
-  ;; disable 'cljr-slash
-  (define-key clj-refactor-map (kbd "/") nil))
-
-
 (defun define-evil-map-key (key action)
   (define-key evil-normal-state-map (kbd key) action)
   (define-key evil-insert-state-map (kbd key) action)
@@ -262,12 +257,6 @@
   (av-wireup-pg-stuff))
 
 
-;; (defun init-po-mode ()
-;;   (define-evil-map-key "H-<return>" 'po-edit-msgstr)
-;;   (define-evil-map-key "C-j" 'po-next-untranslated-entry)
-;;   (define-key po-subedit-mode-map (kbd "h-<return>") 'po-subedit-exit))
-
-
 (defun dotspacemacs/user-config ()
   (setenv "LANG" "en_US.UTF-8")
   (add-to-list 'exec-path "/opt/homebrew/bin")
@@ -288,8 +277,6 @@
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'paredit-mode)
   (add-hook 'clojure-mode-hook #'init-clojure-mode)
-  ;; (add-hook 'po-mode-hook #'init-po-mode)
-  ;; (add-hook 'cider-mode-hook   #'init-cider-mode)
 
   (setup-web-mode)
   ;; (register-cider-refresh-hooks)
