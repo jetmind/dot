@@ -11,6 +11,7 @@
   ci = commit
   st = status
   b = branch
+  bl = branch --sort=-committerdate
   r = rebase
   rma = rebase origin/master
   rc = rebase --continue
