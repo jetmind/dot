@@ -17,10 +17,12 @@
   rc = rebase --continue
   ra = rebase --abort
   please = push --force-with-lease
-  df = diff --ignore-space-change
+  df = difftool
+  dff = diff --ignore-space-change --no-ext-diff
   dfc = diff --ignore-space-change --cached
+  sho = show --ext-diff
   l = log --decorate --stat --graph
-  ll = log --decorate --stat --graph --patch
+  ll = log --decorate --stat --graph --patch --ext-diff
   l1 = log --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %Cgreen(%ai) %C(bold blue)<%an>%Creset %s' --abbrev-commit
   pushtag = !git push origin $(git symbolic-ref HEAD) && git push origin $(git tag --points-at HEAD)
 
@@ -32,6 +34,15 @@
   renames = true
   # don't show a/ and b/ prefixes in front of file paths
   noprefix = true
+  tool = diffstatic
+  external = difft
+[difftool]
+  prompt = false
+[difftool "diffstatic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+  difftool = true
+
 
 [branch]
   autosetupmerge = true
