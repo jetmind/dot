@@ -13,7 +13,7 @@
      emacs-lisp
      (git :variables git-magit-status-fullscreen t)
      (clojure :variables
-              clojure-enable-linters '(clj-kondo joker)
+              clojure-enable-linters '(clj-kondo)
               clojure-toplevel-inside-comment-form t)
      syntax-checking
      ;; python
@@ -38,9 +38,8 @@
      evil-smartparens
      imenu-anywhere
      flycheck-clj-kondo
-     flycheck-joker
      flycheck-pyflakes
-     po-mode
+     ;po-mode
      (av-psql :location local)
      restclient
      )
@@ -239,8 +238,6 @@
 
 
 (defun setup-flycheck ()
-  ;; (require 'flycheck-joker)
-  ;; (add-hook 'clojure-mode-hook #'flycheck-mode)
   (require 'flycheck-pyflakes)
   (add-hook 'python-mode-hook  #'flycheck-mode))
 
