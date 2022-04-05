@@ -4,6 +4,17 @@ local cmds = {"shift", "cmd"}
 local ca = {"ctrl", "alt"}
 
 
+-- open zoom links in zoom
+
+hs.urlevent.httpCallback = function(scheme, host, params, fullURL)
+  if string.find(fullURL, "^https://[%a%d%u.]*zoom%.us/[jw]/") then
+    hs.urlevent.openURLWithBundle(fullURL, "us.zoom.xos")
+  else
+    hs.urlevent.openURLWithBundle(fullURL, "org.mozilla.firefox")
+  end
+end
+
+
 -- switch keyboard layout
 
 hs.hotkey.bind({}, "F16", function()
