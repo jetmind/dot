@@ -22,7 +22,8 @@ hs.hotkey.bind({}, "F16", function()
 end)
 
 hs.hotkey.bind({}, "F17", function()
-    hs.keycodes.currentSourceID("org.sil.ukelele.keyboardlayout.cyrillic- normal.russian-normal")
+    hs.keycodes.currentSourceID("org.sil.ukelele.keyboardlayout.cyrillic- normal.ukrainian-normal")
+    -- hs.keycodes.currentSourceID("org.sil.ukelele.keyboardlayout.cyrillic- normal.russian-normal")
 end)
 
 hs.hotkey.bind({}, "F18", function()
