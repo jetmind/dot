@@ -1,20 +1,3 @@
-local mash = {"cmd", "alt", "ctrl"}
-local cmdc = {"ctrl", "cmd"}
-local cmds = {"shift", "cmd"}
-local ca = {"ctrl", "alt"}
-
-
--- open zoom links in zoom
-
-hs.urlevent.httpCallback = function(scheme, host, params, fullURL)
-  if string.find(fullURL, "^https://[%a%d%u.]*zoom%.us/[jw]/") then
-    hs.urlevent.openURLWithBundle(fullURL, "us.zoom.xos")
-  else
-    hs.urlevent.openURLWithBundle(fullURL, "org.mozilla.firefox")
-  end
-end
-
-
 -- switch keyboard layout
 
 hs.hotkey.bind({}, "F16", function()
@@ -78,3 +61,28 @@ end)
 hs.hotkey.bind({"cmd"}, "9", function()
     hs.application.launchOrFocus("Telegram")
 end)
+
+
+-- open zoom links in zoom
+hs.urlevent.httpCallback = function(scheme, host, params, fullURL)
+  if string.find(fullURL, "^https://[%a%d%u.]*zoom%.us/[jw]/") then
+    hs.urlevent.openURLWithBundle(fullURL, "us.zoom.xos")
+  else
+    hs.urlevent.openURLWithBundle(fullURL, "org.mozilla.firefox")
+  end
+end
+
+
+-- kill annoying anyconnect popup
+function closeAnyconnectPopup(window, appName, eventName)
+  hs.timer.doAfter(1, function()
+    window:focus()
+    local button = { x = window:topLeft().x + 350, y = window:topLeft().y + 125 }
+    -- print(hs.inspect(button))
+    hs.eventtap.leftClick(button)
+  end)
+end
+
+local wf=hs.window.filter
+awf = wf.new(false):setAppFilter('Finder', {allowTitles = 'Cisco AnyConnect Secure Mobility Client'})
+awf:subscribe(wf.windowCreated, closeAnyconnectPopup, true)
