@@ -30,7 +30,7 @@ export GPG_TTY=$(tty)  # signing releases with lein doesn't work w/o this
 
 
 export PATH=/opt/homebrew/bin:"${PATH}"
-export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export JAVA_HOME=$(/usr/libexec/java_home -v 18)
 
 export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
 . "$HOME/.opam/opam-init/init.sh" > /dev/null 2> /dev/null || true
