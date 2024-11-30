@@ -34,15 +34,17 @@
   renames = true
   # don't show a/ and b/ prefixes in front of file paths
   noprefix = true
-  tool = diffstatic
+  tool = difftastic
   external = difft
 [difftool]
   prompt = false
-[difftool "diffstatic"]
+[difftool "difftastic"]
   cmd = difft "$LOCAL" "$REMOTE"
 [pager]
   difftool = true
 
+[merge]
+  conflictstyle = zdiff3
 
 [branch]
   autosetupmerge = true
@@ -50,3 +52,12 @@
   excludesfile = /home/jetmind/.gitignore_global
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[rerere]
+	enabled = true

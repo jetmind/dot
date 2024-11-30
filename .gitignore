@@ -1,5 +1,6 @@
 *~
 *.swp
+.cpcache
 
 LightTable/User/user_compiled.js
 LightTable/User/*.bak
