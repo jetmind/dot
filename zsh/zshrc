@@ -15,6 +15,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 alias o="open"
 alias e="emacsclient --no-wait"
+alias zed="/Applications/Zed.app/Contents/MacOS/cli"
 
 function _psql() { psql service="$@" }
 alias db='_psql'
@@ -30,13 +31,15 @@ export GPG_TTY=$(tty)  # signing releases with lein doesn't work w/o this
 
 
 export PATH=/opt/homebrew/bin:"${PATH}"
-export JAVA_HOME=$(/usr/libexec/java_home -v 18)
+export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 
+test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
-. "$HOME/.opam/opam-init/init.sh" > /dev/null 2> /dev/null || true
 export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH="$HOME/p/go"
 . ~/.ghcup/env
+
+export PATH=$PATH:~/roc/roc_nightly-macos_apple_silicon-2024-06-07-b3c28ebe66b
 
 
 # autojump
